@@ -4,7 +4,6 @@
 <body>
 
 
-
 @include('frontend.theme.ui.includes.navbar')
 
 

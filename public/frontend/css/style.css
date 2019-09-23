@@ -4,7 +4,7 @@
 
 Template Name: Evlis
 Template URL: https://themescare.com/demos/evlis-view
-Description: 
+Description:
 Author: Themescare
 Author URL: https://themeforest.net/user/themescare
 Version: 1.0
@@ -1544,7 +1544,9 @@ img.dates-cal{
 .slider-speech{
 	height: 250px;
 }
-
+.text-black{
+    color: black!important;
+}
 
 /* keynote speech */
 .keynote-speech{
@@ -1579,6 +1581,15 @@ img.dates-cal{
 	color: #420e62;
 	line-height: 2.5;
 
+}
+/* abstract */
+.navbar-saver {
+    height: 5vh;
+}
+.abstract h1,
+.abstract label,
+.abstract input {
+    font-family: 'Roboto', sans-serif;
 }
 
 /*

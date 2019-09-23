@@ -14,3 +14,13 @@
 Route::get('/', function () {
     return view('frontend.pages.home');
 });
+Route::get('/registration', function () {
+    return view('frontend.pages.registration');
+});
+Route::get('/abstract', function () {
+    return view('frontend.pages.abstract');
+});
+
+Route::get('/workshop', function () {
+    return view('frontend.pages.workshop');
+});
