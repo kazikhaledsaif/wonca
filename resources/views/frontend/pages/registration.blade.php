@@ -4,7 +4,8 @@
 
 @section('content')
 
-    <form action="reg_act.php" method="post">
+    <form method="POST" action="{{ route('register') }}">
+        @csrf
         <div class="container">
             <center> <h1> 17th WONCA World Rural Health Conference 2020 </h1> </center>
             <center> <h2> Registration Form </h2> </center>
@@ -307,7 +308,7 @@
             <input  class="contact_input" type="text" id="accompanying_person" placeholder="Accompaning Person Number" name="accompanying_person">
 
             <label for="psw"><font size="4"><b>Password</b></font></label>
-            <input  class="contact_input" type="password" id="psw" placeholder="Enter Password" name="psw" required>
+            <input  class="contact_input" type="password" id="psw" placeholder="Enter Password" name="password" required>
 
             <lebel for = "cat"><font size="4"> <b> Registration Category: </b> <br>
                     <input type="radio" name="cat" value="wdm"> Wonca Direct Member - (USD 600) <br>
@@ -338,7 +339,7 @@
         </div>
 
         <div class="container signin">
-            <p>Already have an account? <a href="login.php">Sign in</a>.</p>
+            <p>Already have an account? <a href="#">Sign in</a>.</p>
         </div>
     </form>
 
