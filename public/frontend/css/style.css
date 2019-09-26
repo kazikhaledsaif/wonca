@@ -64,6 +64,7 @@ body {
 	font-weight: 400;
 	-webkit-font-smoothing: antialiased;
 	-moz-font-smoothing: antialiased;
+
 	font-family: 'Roboto', sans-serif;
 }
 
@@ -1591,7 +1592,12 @@ img.dates-cal{
 .abstract input {
     font-family: 'Roboto', sans-serif;
 }
-
+.guideline ul li {
+    font-family: 'Roboto', sans-serif;
+    list-style-type: disc;
+    margin-left: 3px;
+    line-height: 2;
+}
 /*
 
 focus-color: #420e62;

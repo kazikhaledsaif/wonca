@@ -13,13 +13,14 @@
 
 Route::get('/', function () {
     return view('frontend.pages.home');
-});
+})->name('home');
 Route::get('/registration', function () {
     return view('frontend.pages.registration');
 });
-Route::get('/abstract', function () {
-    return view('frontend.pages.abstract');
-});
+Route::get('/abstract', 'Frontend\AbstractController@create' )->name('abstract.form');
+Route::post('/abstract', 'Frontend\AbstractController@store')->name('abstract.store');
+Route::get('/workshop', 'Frontend\WorkshopController@create')->name('workshop.create');
+Route::post('/workshop', 'Frontend\WorkshopController@store')->name('workshop.store');
 
 Route::get('/workshop', function () {
     return view('frontend.pages.workshop');
