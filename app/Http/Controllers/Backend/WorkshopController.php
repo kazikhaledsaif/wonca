@@ -3,25 +3,23 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use App\User;
+use App\Workshop;
 use Illuminate\Http\Request;
 
-class RegisteredUserController extends Controller
+class WorkshopController extends Controller
 {
     /**
-     *
-     *
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $registeredUser = User::all();
-
-        return view('backend.pages.registerd_user')->with([
-            'users'=>$registeredUser
-        ]);
+        //
+    }
+    public function frontend()
+    {
+        return view('frontend.pages.workshop');
     }
 
     /**
@@ -42,7 +40,12 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $abstract = new Workshop();
+        $abstract->title = $request->title;
+        $abstract->author =   $request->author;
+        $abstract->abstract =  $request->abstract;
+        $abstract->save();
+        return redirect()->back();
     }
 
     /**

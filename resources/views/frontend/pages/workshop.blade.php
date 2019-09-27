@@ -19,7 +19,8 @@
     <div class="container mt-lg-5  abstract">
         <h1 class="ml-1 text-black">Workshop & Scientific Paper Submission Form</h1> <br>
 
-        <form class="text-black" action="" method="post">
+        <form class="text-black" action="{{ route('workshop.store') }}" method="post">
+            @csrf
             <div class="form-group row">
                 <label for="title" class="col-sm-2 col-form-label">Title *</label>
                 <div class="col-sm-10">
@@ -35,7 +36,7 @@
             <div class="form-group row">
                 <label for="abstract" class="col-sm-2 col-form-label">Abstract (max 250 words) *</label>
                 <div class="col-sm-10">
-                    <textarea class="form-control" name="workshop" rows="8"></textarea>
+                    <textarea class="form-control" name="abstract" rows="8"></textarea>
                 </div>
             </div>
 

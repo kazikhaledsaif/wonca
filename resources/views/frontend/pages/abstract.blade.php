@@ -19,7 +19,8 @@
     <div class="container mt-lg-5  abstract">
         <h1 class="ml-1 text-black">Abstract Submission Form</h1> <br>
 
-        <form class="text-black" action="" method="post">
+        <form class="text-black" action="{{ route('abstract.store') }}" method="post">
+            @csrf
             <div class="form-group row">
                 <label for="title" class="col-sm-2 col-form-label">Title *</label>
                 <div class="col-sm-10">

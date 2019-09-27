@@ -2,26 +2,21 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\AbstractSubmission;
 use App\Http\Controllers\Controller;
-use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class RegisteredUserController extends Controller
+class AbstractController extends Controller
 {
     /**
-     *
-     *
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $registeredUser = User::all();
-
-        return view('backend.pages.registerd_user')->with([
-            'users'=>$registeredUser
-        ]);
+        return view('backend.pages.abstract');
     }
 
     /**
@@ -33,6 +28,21 @@ class RegisteredUserController extends Controller
     {
         //
     }
+    public function frontend()
+    {
+
+        if (Auth::guest()) {
+            //is a guest so redirect
+            return redirect('login');
+        }
+
+        else{
+            return view('frontend.pages.abstract');
+        }
+
+
+
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -42,7 +52,13 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $abstract = new AbstractSubmission();
+        $abstract->title = $request->title;
+        $abstract->author =   $request->author;
+        $abstract->abstract =  $request->abstract;
+        $abstract->save();
+        return redirect()->back();
     }
 
     /**
