@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Subscriber;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
@@ -17,6 +18,15 @@ class IndexController extends Controller
         return view('frontend.pages.home');
     }
 
+    public function subscriber(Request $request)
+    {
+        $abstract = new Subscriber();
+
+
+        $abstract->email =  $request->subscriber;
+        $abstract->save();
+        return redirect()->back();
+    }
     /**
      * Show the form for creating a new resource.
      *

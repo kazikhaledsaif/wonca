@@ -16,7 +16,12 @@ class AbstractController extends Controller
      */
     public function index()
     {
-        return view('backend.pages.abstract');
+        $registeredUser = AbstractSubmission::all();
+
+        return view('backend.pages.abstract')->with([
+            'users'=>$registeredUser
+        ]);
+
     }
 
     /**
@@ -54,6 +59,8 @@ class AbstractController extends Controller
     {
 
         $abstract = new AbstractSubmission();
+
+        $abstract->uid = auth()->user()->id;
         $abstract->title = $request->title;
         $abstract->author =   $request->author;
         $abstract->abstract =  $request->abstract;
@@ -69,7 +76,10 @@ class AbstractController extends Controller
      */
     public function show($id)
     {
-        //
+       $user = AbstractSubmission::where('id',$id)->firstOrFail();
+        return view('backend.pages.abstract_details')->with([
+            'user' => $user,
+        ]);
     }
 
     /**

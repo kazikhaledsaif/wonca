@@ -3,25 +3,19 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use App\User;
+use App\ImportantDate;
 use Illuminate\Http\Request;
 
-class RegisteredUserController extends Controller
+class ImportantDateController extends Controller
 {
     /**
-     *
-     *
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $registeredUser = User::all();
-
-        return view('backend.pages.registerd_user')->with([
-            'users'=>$registeredUser
-        ]);
+        //
     }
 
     /**
@@ -31,7 +25,11 @@ class RegisteredUserController extends Controller
      */
     public function create()
     {
-        //
+        $registeredUser = ImportantDate::all();
+
+        return view('backend.pages.registerd_user')->with([
+            'users'=>$registeredUser
+        ]);
     }
 
     /**
@@ -53,10 +51,7 @@ class RegisteredUserController extends Controller
      */
     public function show($id)
     {
-        $user = User::where('id',$id)->firstOrFail();
-        return view('backend.pages.registerd_user_deatils')->with([
-            'user' => $user,
-        ]);
+        //
     }
 
     /**

@@ -55,7 +55,7 @@
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->mobile }}</td>
                         <td>{{ $user->country }}</td>
-                        <td><a href="" class="btn btn-info">Details</a></td>
+                        <td><a href="{{ route('backend.registered-user.show',['id'=> $user->id]) }}" class="btn btn-info">Details</a></td>
                     </tr>
                     @endforeach
 

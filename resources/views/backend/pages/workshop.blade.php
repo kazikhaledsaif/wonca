@@ -9,14 +9,14 @@
         <li class="breadcrumb-item">
             <a href="#">Dashboard</a>
         </li>
-        <li class="breadcrumb-item active">Paper Abstrract</li>
+        <li class="breadcrumb-item active">Workshops</li>
     </ol>
 
     <!-- DataTables Example -->
     <div class="card mb-3">
         <div class="card-header">
             <i class="fas fa-table"></i>
-            Paper Abstract <span class="badge badge-info"></span> </div>
+            Workshops <span class="badge badge-info"></span> </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -42,10 +42,10 @@
 
                     @foreach($users as $user)
                         <tr>
-                            <td>{{ $user->user->email }} </td>
+                            <td>{{ $user->workshopUser->email }} </td>
                             <td>{{ $user->title }}</td>
                             <td>{{ $user->author }}</td>
-                            <td><a href="{{ route('backend.abstract-submitted.show',['id'=> $user->id]) }}" class="btn btn-primary">View</a></td>
+                            <td><a href="{{ route('backend.workshop.show',['id'=> $user->id]) }}" class="btn btn-primary">View</a></td>
                         </tr>
                     @endforeach
 

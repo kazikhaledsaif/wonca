@@ -291,8 +291,12 @@
             </select> <br>
 
             <label for="email"><font size="4"><b> Email</b></font></label>
-            <input  class="contact_input" type="text" id="email" placeholder="something@gmail.com" name="email" required>
-
+            <input  class="contact_input  @error('email') is-invalid @enderror" type="text" id="email" placeholder="something@gmail.com" name="email" required>
+            @error('email')
+            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+            @enderror
             <label for="mobile"><font size="4"><b> Mobile: </b></font></label>
             <input  class="contact_input" type="text" id="mobile" placeholder="+8801xxxxxxxx" name="mobile" required>
 
@@ -308,7 +312,14 @@
             <input  class="contact_input" type="text" id="accompanying_person" placeholder="Accompaning Person Number" name="accompanying_person">
 
             <label for="psw"><font size="4"><b>Password</b></font></label>
-            <input  class="contact_input" type="password" id="psw" placeholder="Enter Password" name="password" required>
+            <input  class="contact_input @error('password') is-invalid @enderror" type="password" id="psw" placeholder="Enter Password" name="password" required>
+            @error('password')
+            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+            @enderror
+            <label for="psw"><font size="4"><b>Comfirm Password</b></font></label>
+            <input  class="contact_input" type="password" id="psw" placeholder="Enter Password" name="password_confirmation" required>
 
             <lebel for = "cat"><font size="4"> <b> Registration Category: </b> <br>
                     <input type="radio" name="cat" value="wdm"> Wonca Direct Member - (USD 600) <br>

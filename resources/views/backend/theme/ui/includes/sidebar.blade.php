@@ -14,19 +14,24 @@
     <li class="nav-item">
         <a class="nav-link" href="{{route('backend.abstract-submitted')}}">
             <i class="fas fa-fw fa-certificate"></i>
-            <span>Abstract Submited</span>
+            <span>Abstract Submitted</span>
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{{route('backend.workshop')}}">
             <i class="fas fa-fw fa-book-reader"></i>
             <span>Workshop</span>
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{{route('backend.subscriber')}}">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Subscriber</span></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{route('backend.subscriber')}}">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Important Dates</span></a>
     </li>
     <li class="nav-item">
         <a class="nav-link"  href="#" data-toggle="modal" data-target="#logoutModal">

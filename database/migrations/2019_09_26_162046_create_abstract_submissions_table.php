@@ -15,6 +15,7 @@ class CreateAbstractSubmissionsTable extends Migration
     {
         Schema::create('abstract_submissions', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('uid');
             $table->string('title')->nullable();
             $table->string('author')->nullable();
             $table->string('abstract')->nullable();

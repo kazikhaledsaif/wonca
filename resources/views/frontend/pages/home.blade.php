@@ -191,9 +191,10 @@
                 <div class="countdown-box">
                     <div class="countdown-inner-text">
                         <div class="your-clock"></div>
-                        <form>
+                        <form method="POST" action="{{ route('frontend.subscriber.store') }}">
+                            @csrf
                             <p>
-                                <input type="email" placeholder="E-mail Address" />
+                                <input type="email" placeholder="E-mail Address" name="subscriber"/>
                             </p>
                             <p>
                                 <button type="submit">Subscribe</button>

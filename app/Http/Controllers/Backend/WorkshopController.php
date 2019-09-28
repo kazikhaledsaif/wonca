@@ -15,7 +15,11 @@ class WorkshopController extends Controller
      */
     public function index()
     {
-        //
+        $registeredUser = Workshop::all();
+
+        return view('backend.pages.workshop')->with([
+            'users'=>$registeredUser
+        ]);
     }
     public function frontend()
     {
@@ -41,6 +45,7 @@ class WorkshopController extends Controller
     public function store(Request $request)
     {
         $abstract = new Workshop();
+        $abstract->uid = auth()->user()->id;
         $abstract->title = $request->title;
         $abstract->author =   $request->author;
         $abstract->abstract =  $request->abstract;
@@ -56,7 +61,10 @@ class WorkshopController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = Workshop::where('id',$id)->firstOrFail();
+        return view('backend.pages.workshop_details')->with([
+            'user' => $user,
+        ]);
     }
 
     /**
