@@ -3,21 +3,16 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use App\ImportantDate;
+use App\Schedule;
 use Illuminate\Http\Request;
 
-class ImportantDateController extends Controller
+class ScheduleController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        $registeredUser = ImportantDate::all();
+        $registeredUser = Schedule::all();
 
-        return view('backend.pages.dates')->with([
+        return view('backend.pages.schedules')->with([
             'users'=>$registeredUser
         ]);
     }
@@ -29,7 +24,7 @@ class ImportantDateController extends Controller
      */
     public function create()
     {
-        return view('backend.pages.add_date');
+        return view('backend.pages.add_schedule');
     }
 
     /**
@@ -40,37 +35,39 @@ class ImportantDateController extends Controller
      */
     public function store(Request $request)
     {
-        $abstract = new ImportantDate();
 
+        $abstract = new Schedule();
+        $abstract->time = $request->time;
         $abstract->title =   $request->title;
-        $abstract->details =  $request->details;
-
+        $abstract->text =   $request->text;
+        $abstract->day =  $request->day;
         $abstract->save();
-        return redirect()->route('backend.dates');
+        return redirect()->route('backend.schedules');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Speech  $speech
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $notice = ImportantDate::where('id',$id)->firstOrFail();
+        $notice = Schedule::where('id',$id)->firstOrFail();
 
 
-        return view('backend.pages.edit_date')->with([
+        return view('backend.pages.edit_schedule')->with([
             'user' => $notice
         ]);
     }
+
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Speech  $speech
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Speech $speech)
     {
         //
     }
@@ -79,30 +76,30 @@ class ImportantDateController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Speech  $speech
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request)
     {
-        $abstract = ImportantDate::find($request->id);
+        $abstract = Schedule::find($request->id);
 
+        $abstract->time = $request->time;
         $abstract->title =   $request->title;
-        $abstract->details =  $request->details;
-
+        $abstract->text =   $request->text;
+        $abstract->day =  $request->day;
         $abstract->save();
-        return redirect()->route('backend.dates');
+        return redirect()->route('backend.schedules');
     }
-
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Speech  $speech
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        ImportantDate::find($id)->delete();
-        return redirect()->route('backend.dates');
+        Schedule::find($id)->delete();
+        return redirect()->route('backend.schedules');
     }
 }

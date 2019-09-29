@@ -15,5 +15,11 @@
 
     <!-- Custom styles for this template-->
     <link href="{{ asset('backend/css/sb-admin.css') }}" rel="stylesheet">
+    <script src='https://cdn.tiny.cloud/1/75k92kh1smx0pousjzd5g8iaclomgl9erkv5bytaqro2q7f6/tinymce/5/tinymce.min.js' referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+            selector: '#mytextarea'
+        });
+    </script>
 
 </head>

@@ -429,7 +429,7 @@
                                         </div>
                                     </li>
                                 </ul>
-                            </div>
+                            </div> <br>
                         </div>
                         <div class="col-md-6">
                             <div class="dates">
@@ -439,14 +439,13 @@
                                             <img class="dates-cal" src="{{ asset('frontend/img/event.png') }}">
                                         </div>
                                         <div class="col-10 text-left">
-                                            <h4>Online Registration Open (Early Bird)</h4>
-                                            <p>Coming Soon</p>
+                                            <h4>Abstract Submissions Open (Workshops/Symposia)</h4>
+                                            <p>Date Coming Soon, 2020</p>
                                         </div>
                                     </li>
                                 </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
+                            </div><br>
+                        </div>        <div class="col-md-6">
                             <div class="dates">
                                 <ul>
                                     <li class="row">
@@ -454,58 +453,59 @@
                                             <img class="dates-cal" src="{{ asset('frontend/img/event.png') }}">
                                         </div>
                                         <div class="col-10 text-left">
-                                            <h4>Online Accommodation Open</h4>
+                                            <h4>Abstract Submissions Open (Workshops/Symposia)</h4>
+                                            <p>Date Coming Soon, 2020</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div><br>
+                        </div>        <div class="col-md-6">
+                            <div class="dates">
+                                <ul>
+                                    <li class="row">
+                                        <div class="col-1 date-img">
+                                            <img class="dates-cal" src="{{ asset('frontend/img/event.png') }}">
+                                        </div>
+                                        <div class="col-10 text-left">
+                                            <h4>Abstract Submissions Open (Workshops/Symposia)</h4>
+                                            <p>Date Coming Soon, 2020</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div><br>
+                        </div>        <div class="col-md-6">
+                            <div class="dates">
+                                <ul>
+                                    <li class="row">
+                                        <div class="col-1 date-img">
+                                            <img class="dates-cal" src="{{ asset('frontend/img/event.png') }}">
+                                        </div>
+                                        <div class="col-10 text-left">
+                                            <h4>Abstract Submissions Open (Workshops/Symposia)</h4>
+                                            <p>Date Coming Soon, 2020</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div><br>
+                        </div>        <div class="col-md-6">
+                            <div class="dates">
+                                <ul>
+                                    <li class="row">
+                                        <div class="col-1 date-img">
+                                            <img class="dates-cal" src="{{ asset('frontend/img/event.png') }}">
+                                        </div>
+                                        <div class="col-10 text-left">
+                                            <h4>Abstract Submissions Open (Workshops/Symposia)</h4>
                                             <p>Date Coming Soon, 2020</p>
                                         </div>
                                     </li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="dates">
-                                <ul>
-                                    <li class="row">
-                                        <div class="col-1 date-img">
-                                            <img class="dates-cal" src="{{ asset('frontend/img/event.png') }}">
-                                        </div>
-                                        <div class="col-10 text-left">
-                                            <h4>Submission Close (Workshops/Symposia)</h4>
-                                            <p>Date Coming Soon, 2020</p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="dates">
-                                <ul>
-                                    <li class="row">
-                                        <div class="col-1 date-img">
-                                            <img class="dates-cal" src="{{ asset('frontend/img/event.png') }}">
-                                        </div>
-                                        <div class="col-10 text-left">
-                                            <h4>Abstract Submissions Open (Oral/Poster)</h4>
-                                            <p>Date Coming Soon, 2020</p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="dates">
-                                <ul>
-                                    <li class="row">
-                                        <div class="col-1 date-img">
-                                            <img class="dates-cal" src="{{ asset('frontend/img/event.png') }}">
-                                        </div>
-                                        <div class="col-10 text-left">
-                                            <h4>Author Notifications (Workshops/Symposia)</h4>
-                                            <p>Date Coming Soon, 2020</p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+
+
+
+
                     </div>
                 </div>
             </div>

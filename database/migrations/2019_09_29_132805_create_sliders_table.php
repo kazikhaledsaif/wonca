@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateImportantDatesTable extends Migration
+class CreateSlidersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateImportantDatesTable extends Migration
      */
     public function up()
     {
-        Schema::create('important_dates', function (Blueprint $table) {
+        Schema::create('sliders', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title')->nullable();
-            $table->string('details')->nullable();
+            $table->string('slider_details')->nullable();
+            $table->string('slider_image')->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateImportantDatesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('important_dates');
+        Schema::dropIfExists('sliders');
     }
 }

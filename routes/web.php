@@ -65,10 +65,42 @@ Route::name('backend.')
         Route::get('/abstract-submitted', 'AbstractController@index')->name('abstract-submitted');
         Route::get('/abstract-submitted/{id}', 'AbstractController@show')->name('abstract-submitted.show');
         Route::get('/workshop', 'WorkshopController@index')->name('workshop');
+        Route::get('/workshop/{id}', 'WorkshopController@show')->name('workshop.show');
+        Route::get('/subscriber', 'SubscriberController@index')->name('subscriber');
 
-    Route::get('/workshop/{id}', 'WorkshopController@show')->name('workshop.show');
-    Route::get('/subscriber', 'SubscriberController@index')->name('subscriber');
-    Route::get('/important-dates', 'SubscriberController@index')->name('subscriber');
+    Route::get('/add-important-date', 'ImportantDateController@create')->name('date.create');
+    Route::post('/add-important-date', 'ImportantDateController@store')->name('date.store');
+    Route::get('/important-dates', 'ImportantDateController@index')->name('dates');
+    Route::post('/important-date-update', 'ImportantDateController@update')->name('date.update');
+    Route::get('/important-date-destroy/{id}', 'ImportantDateController@destroy')->name('date.destroy');
+    Route::get('/important-date-edit/{id}', 'ImportantDateController@show')->name('date.edit');
+
+        Route::get('/add-speech', 'SpeechController@create')->name('speech.create');
+        Route::post('/add-speech', 'SpeechController@store')->name('speech.store');
+        Route::get('/speeches', 'SpeechController@index')->name('speeches');
+        Route::post('/speech-update', 'SpeechController@update')->name('speech.update');
+        Route::get('/speech-destroy/{id}', 'SpeechController@destroy')->name('speech.destroy');
+        Route::get('/speech-edit/{id}', 'SpeechController@show')->name('speech.edit');
+
+    Route::get('/add-slider', 'SliderController@create')->name('slider.create');
+    Route::post('/add-slider', 'SliderController@store')->name('slider.store');
+    Route::get('/sliders', 'SliderController@index')->name('sliders');
+    Route::post('/slider-update', 'SliderController@update')->name('slider.update');
+    Route::get('/slider-destroy/{id}', 'SliderController@destroy')->name('slider.destroy');
+    Route::get('/slider-edit/{id}', 'SliderController@show')->name('slider.edit');
+
+
+    Route::get('/add-schedule', 'ScheduleController@create')->name('schedule.create');
+    Route::post('/add-schedule', 'ScheduleController@store')->name('schedule.store');
+    Route::get('/schedules', 'ScheduleController@index')->name('schedules');
+    Route::post('/schedule-update', 'ScheduleController@update')->name('schedule.update');
+    Route::get('/schedule-destroy/{id}', 'ScheduleController@destroy')->name('schedule.destroy');
+    Route::get('/schedule-edit/{id}', 'ScheduleController@show')->name('schedule.edit');
+
+
+
+
+
 
     });
 
