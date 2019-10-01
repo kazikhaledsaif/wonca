@@ -772,88 +772,78 @@
 <!-- Speakers Area End -->
 
 <!-- Registration Area Start -->
-<section class="evlis-registration-area section_70">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="registration-box">
-                    <p>Book Your Seat Now</p>
+{{--<section class="evlis-registration-area section_70">--}}
+{{--    <div class="container">--}}
+{{--        <div class="row">--}}
+{{--            <div class="col-md-12">--}}
+{{--                <div class="registration-box">--}}
+{{--                    <p>Book Your Seat Now</p>--}}
 
-                    <div class="row">
-                        <div class="col-md-12">
-                            <p>
-                                <a href="#" class="evlis-btn">Register now</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+{{--                    <div class="row">--}}
+{{--                        <div class="col-md-12">--}}
+{{--                            <p>--}}
+{{--                                <a href="#" class="evlis-btn">Register now</a>--}}
+{{--                            </p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</section>--}}
 <!-- Registration Area End -->
 
 
 <!-- Pricing Area Start -->
-<section class="evlis-pricing-area section_70"  data-scroll-index="6">
-    <div class="container">
+<section class="evlis-registration-area section_70"  data-scroll-index="6">
+    <div class="container-fluid p-5 ">
         <div class="row">
-            <div class="col-lg-4">
-                <div class="single-price-box">
-                    <div class="price-head">
-                        <h4>VIP Access</h4>
-                        <h2>$120<span> / person</span></h2>
-                    </div>
-                    <div class="price-body">
-                        <ul>
-                            <li><i class="fa fa-check"></i> Get Access to all Sessions</li>
-                            <li><i class="fa fa-check"></i> Unlimited Coffee and Foods</li>
-                            <li><i class="fa fa-times"></i> Meet with Favorite Speakers</li>
-                            <li><i class="fa fa-times"></i> Access to all Media Files</li>
-                        </ul>
-                        <div class="price-action">
-                            <a href="#" class="evlis-btn">Register Now!</a>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-lg-5 about-container mr-3">
+                <h2>Dhaka</h2>
+                <h4>Your Host City</h4>
+                <iframe  width="100%"
+                        src="https://www.youtube.com/embed/4AnzWqD-_hI?controls=0">
+                </iframe>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure laboriosam libero mollitia pariatur quas quisquam
+                    velit. Accusantium at distinctio dolores incidunt libero
+                    odio perspiciatis, qui, similique soluta tempore, ut voluptatum?</p>
             </div>
-            <div class="col-lg-4">
-                <div class="single-price-box active">
-                    <div class="price-head">
-                        <h4>All Access</h4>
-                        <h2>$235<span> / person</span></h2>
-                    </div>
-                    <div class="price-body">
-                        <ul>
-                            <li><i class="fa fa-check"></i> Get Access to all Sessions</li>
-                            <li><i class="fa fa-check"></i> Unlimited Coffee and Foods</li>
-                            <li><i class="fa fa-check"></i> Meet with Favorite Speakers</li>
-                            <li><i class="fa fa-times"></i> Access to all Media Files</li>
-                        </ul>
-                        <div class="price-action">
-                            <a href="#" class="evlis-btn">Register Now!</a>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-lg-3 about-container mr-3">
+                <h2>Tourism</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure laboriosam libero mollitia pariatur quas quisquam
+                    velit. Accusantium at distinctio dolores incidunt libero
+                    odio perspiciatis, qui, similique soluta tempore, ut voluptatum?</p>
             </div>
-            <div class="col-lg-4">
-                <div class="single-price-box">
-                    <div class="price-head">
-                        <h4>Main Conference</h4>
-                        <h2>$390<span> / person</span></h2>
-                    </div>
-                    <div class="price-body">
-                        <ul>
-                            <li><i class="fa fa-check"></i> Get Access to all Sessions</li>
-                            <li><i class="fa fa-check"></i> Unlimited Coffee and Foods</li>
-                            <li><i class="fa fa-check"></i> Meet with Favorite Speakers</li>
-                            <li><i class="fa fa-check"></i> Access to all Media Files</li>
-                        </ul>
-                        <div class="price-action">
-                            <a href="#" class="evlis-btn">Register Now!</a>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-lg-3 about-container mr-3">
+                <h2>Visa Information</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure laboriosam libero mollitia pariatur quas quisquam
+                    velit. Accusantium at distinctio dolores incidunt libero
+                    odio perspiciatis, qui, similique soluta tempore, ut voluptatum?</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-5 about-container mr-3">
+                <h2>International Attendess</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure laboriosam libero mollitia pariatur quas quisquam
+                    velit. Accusantium at distinctio dolores incidunt libero
+                    odio perspiciatis, qui, similique soluta tempore, ut voluptatum?</p>
+            </div>
+            <div class="col-lg-3 about-container mr-3">
+                <h2>Accommodation</h2>
+                <p>
+                    <li><a href="#">Inter Continental</a></li>
+                    <li><a href="#">Pan Pacific</a></li>
+                    <li><a href="#">Radison</a></li>
+                    <li><a href="#">Lovinci</a></li>
+                    <li><a href="#">La Merredean</a></li>
+                    <li><a href="#">Regency</a></li>
+                </p>
+            </div>
+            <div class="col-lg-3 about-container mr-3">
+                <h2>Transportation</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure laboriosam libero mollitia pariatur quas quisquam
+                    velit. Accusantium at distinctio dolores incidunt libero
+                    odio perspiciatis, qui, similique soluta tempore, ut voluptatum?</p>
             </div>
         </div>
     </div>
@@ -867,55 +857,47 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="site-heading">
-                    <h4>latest news</h4>
-                    <h2>Event News</h2>
-                    <p>Consectetur adipisicing elit sed do eiusmod, tempor incididunt labore dolore magna aliqua enim minim veniam quista nostrud exion.</p>
+                    <h4>Event News</h4>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <div class="single-blog">
-                    <div class="blog-image">
-                        <a href="#">
-                            <img src="assets/img/blog-1.jpg" alt="blog 1" />
-                        </a>
+                <div class="single-blog row">
+                    <div class="col-3 blog-image">
                         <p class="date-bg-1">17 <span>Jan</span></p>
                     </div>
-                    <div class="blog-text">
-                        <a href="#">
-                            <h3>New Digital Dimension for Next Event</h3>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="single-blog">
-                    <div class="blog-image">
-                        <a href="#">
-                            <img src="assets/img/blog-3.jpg" alt="blog 1" />
-                        </a>
-                        <p class="date-bg-2">17 <span>Jan</span></p>
-                    </div>
-                    <div class="blog-text">
-                        <a href="#">
-                            <h3>Your Corporate Event Clients Happy</h3>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="single-blog">
-                    <div class="blog-image">
-                        <a href="#">
-                            <img src="assets/img/blog-2.jpg" alt="blog 1" />
-                        </a>
-                        <p class="date-bg-1">17 <span>Jan</span></p>
-                    </div>
-                    <div class="blog-text">
+                    <div class="col-9 blog-text">
                         <a href="#">
                             <h3>marketing event you can't afford to miss.</h3>
                         </a>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor eligendi, facere libero neque quis sequi ullam vel voluptatum. Beatae consectetur repellat sed suscipit tempore ut! Assumenda maiores minus nemo obcaecati.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="single-blog row">
+                    <div class="col-3 blog-image">
+                        <p class="date-bg-1">17 <span>Jan</span></p>
+                    </div>
+                    <div class="col-9 blog-text">
+                        <a href="#">
+                            <h3>marketing event you can't afford to miss.</h3>
+                        </a>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor eligendi, facere libero neque quis sequi ullam vel voluptatum. Beatae consectetur repellat sed suscipit tempore ut! Assumenda maiores minus nemo obcaecati.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="single-blog row">
+                    <div class="col-3 blog-image">
+                        <p class="date-bg-1">17 <span>Jan</span></p>
+                    </div>
+                    <div class="col-9 blog-text">
+                        <a href="#">
+                            <h3>marketing event you can't afford to miss.</h3>
+                        </a>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor eligendi, facere libero neque quis sequi ullam vel voluptatum. Beatae consectetur repellat sed suscipit tempore ut! Assumenda maiores minus nemo obcaecati.</p>
                     </div>
                 </div>
             </div>

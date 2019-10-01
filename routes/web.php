@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('frontend.pages.home');
 });
 Route::get('/registration', function () {
-    return view('frontend.pages.registration');
+    return view('frontend.pages.registration-detail');
 });
 Route::get('/abstract', function () {
     return view('frontend.pages.abstract');
