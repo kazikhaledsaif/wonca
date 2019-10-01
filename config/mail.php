@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'address' => env('MAIL_FROM_ADDRESS', 'no-reply@wrhc2020.com'),
+        'name' => env('MAIL_FROM_NAME', '17th Rural Health Conference 2020'),
     ],
 
     /*

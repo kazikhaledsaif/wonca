@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Mail\WorkshopMail;
 use App\Workshop;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class WorkshopController extends Controller
 {
@@ -50,6 +53,11 @@ class WorkshopController extends Controller
         $abstract->author =   $request->author;
         $abstract->abstract =  $request->abstract;
         $abstract->save();
+
+        $data = $abstract;
+
+        Mail::to(Auth::user()->email)->send(new WorkshopMail($data));
+
         return redirect()->back();
     }
 

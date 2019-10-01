@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Backend;
 
 use App\AbstractSubmission;
 use App\Http\Controllers\Controller;
+use App\Mail\AbstractMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class AbstractController extends Controller
 {
@@ -65,6 +67,12 @@ class AbstractController extends Controller
         $abstract->author =   $request->author;
         $abstract->abstract =  $request->abstract;
         $abstract->save();
+
+        $data = $abstract;
+
+
+        Mail::to(Auth::user()->email)->send(new AbstractMail($data));
+
         return redirect()->back();
     }
 
