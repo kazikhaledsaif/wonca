@@ -44,9 +44,21 @@
         </div>
 
         <div class="row">
-
+            <div class="col text-center pb-3 pt-3">
+                <h2>Payment</h2>
+            </div>
         </div>
+
+        <div class="col">
+            <p>Your Registration amount is <b>$500</b> </p>
+            <button class="btn bg-success">Proceed To Online Transaction </button>
+
+            <br><br>
+            <span>* You can also pay via local bank transaction manually</span>
+        </div>
+
     </div>
 
 
 @endsection
+

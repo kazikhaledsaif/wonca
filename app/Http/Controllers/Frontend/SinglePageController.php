@@ -12,6 +12,14 @@ class SinglePageController extends Controller
         return view('frontend.pages.dashboard');
     }
 
+    public function payment_success(){
+        return view('frontend.pages.payment-success');
+    }
+
+    public function payment_fail(){
+        return view('frontend.pages.payment-fail');
+    }
+
     public function dates(){
 
         $dates = ImportantDate::take(50)->get();
