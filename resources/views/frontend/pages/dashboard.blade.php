@@ -20,7 +20,7 @@
         <div class="row">
             <div class="col-md-9">
                 <p>
-                    Dear <b>Name</b> , <br>
+                    Dear <b>{{$user->f_name." ".$user->l_name}}</b> , <br>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam blanditiis commodi cupiditate distinctio dolorem expedita
                     facilis hic illo laborum, minus natus omnis perspiciatis quis, quo quod. Accusantium doloribus nostrum soluta!
                 </p>
@@ -31,13 +31,14 @@
                 <div class=" pt-2 pb-2">
                     <div class="col bg-info p-3">
                         <h6>Abstract Submitted</h6>
-                        <h4>2</h4>
+                        <h4>{{$abs}}</h4>
                     </div>
                 </div>
                 <div class=" pt-2 pb-2 ">
                     <div class="col bg-primary p-3">
                         <h6>Workshop paper Submitted</h6>
-                        <h4>2</h4>
+                        <h4>{{$work}}</h4>
+                        <h4>{!! $amount->code !!}</h4>
                     </div>
                 </div>
             </div>

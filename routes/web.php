@@ -37,7 +37,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::name('backend.')
     ->namespace('Backend')
     ->prefix('admin')
-/*    ->middleware('role:admin')*/
+   ->middleware('role:admin')
     ->group(function (){
 
         Route::get('/', 'DashboardController@index')->name('dashboard');
@@ -108,6 +108,8 @@ Route::name('frontend.')
             })->name('registration');
 
             Route::get('/dashboard','SinglePageController@dashboard' )->name('dashboard');
+            Route::get('/payment-success','SinglePageController@payment_success' )->name('payment.success');
+            Route::get('/payment-failed','SinglePageController@payment_fail' )->name('payment.failed');
 
             Route::get('/important-dates','SinglePageController@dates' )->name('dates');
 
