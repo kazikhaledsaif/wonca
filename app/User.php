@@ -40,6 +40,6 @@ class User extends Authenticatable
     ];
 
     public function hasAbstract(){
-        return $this->hasMany(AbstractSubmit::class);
+        return $this->hasMany(AbstractSubmit::class,'uid');
     }
 }

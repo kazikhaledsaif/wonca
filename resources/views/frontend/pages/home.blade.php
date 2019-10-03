@@ -64,32 +64,34 @@
             <div class="col-md-9 col-sm-12">
                 <div class="row">
                     <div class="owl-carousel text-center slider-speech">
+                        @foreach($slider_speech as $slider)
                         <div class="slide-item slider-speech" >
                             <div class="slide-body container">
                                 <div class="row about-box about-box-2">
                                     <div class="col-md-3 col-sm-12">
                                         <div class="single-speakers mt-0">
                                             <div class="speakers-image ml-3 mr-3 ">
-                                                <img src="{{ asset('frontend/img/avator.jpg') }}" alt="speakers">
+                                                <img src="{{ asset("uploads/".$slider['speaker_image']) }}" alt="speakers">
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="col-md-9 col-sm-12 keynote-speech">
                                         <p>
-                                            It’s a great pleasure to announce the 17th WONCA World Rural Health Conference (WRHC 2020) to be held in Dhaka from 15th - 18th April 2020. This is an international event that will see delegates from around the world inspiring and exchanging ideas on the latest developments and challenges in rural family practice and rural and remote health generally.
+                                            {{ $slider['speech'] }}
                                         </p>
                                         <div class="speakers-info front-speaker">
                                             <a href="#">
-                                                <h3>TBA</h3>
+                                                <h3>{{ $slider['speaker_name'] }}</h3>
                                             </a>
-                                            <p>TBA</p>
+                                            <p>{{ $slider['speaker_type'] }}</p>
                                         </div>
 
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -121,13 +123,13 @@
                     <div class="col-md-4">
                         <div class="single-speakers">
                             <div class="speakers-image ml-5 mr-5">
-                                <img src="{{ asset('frontend/img/avator.jpg') }}" alt="speakers 1">
+                                <img src="{{ asset("uploads/".$keynote_speaker['speaker_image']) }}" alt="speakers 1">
                             </div>
                             <div class="speakers-info">
-                                <a href="#">
-                                    <h3>TBA</h3>
+                                <a href="">
+                                    <h3>{{ $keynote_speaker['speaker_name'] }}</h3>
                                 </a>
-                                <p>TBA</p>
+                                <p>{{ $keynote_speaker['speaker_details'] }}</p>
                             </div>
                         </div>
                     </div>
@@ -136,7 +138,7 @@
 
                         <h4>Keynote Speaker</h4>
                         <p>
-                            It’s a great pleasure to announce the 17th WONCA World Rural Health Conference (WRHC 2020) to be held in Dhaka from 15th - 18th April 2020. This is an international event that will see delegates from around the world inspiring and exchanging ideas on the latest developments and challenges in rural family practice and rural and remote health generally.
+                            {{ $keynote_speaker['speech'] }}
                         </p>
                         <a href="#" class="evlis-btn" data-scroll-nav="4">More Speaker</a>
 
@@ -151,34 +153,21 @@
 <!-- image slider  start  -->
 <section class="evlis-slider-area pb-3">
     <div class="owl-carousel text-center slider-tag">
-        <div class="slide-item home_content_container" style="background: url({{ asset('frontend/img/slider1.jpg') }}); background-size: cover">
+
+
+    @foreach($sliders as $slide)
+        <div class="slide-item home_content_container" style="background: url({{ asset("uploads/".$slide['slider_image']) }}); background-size: cover">
             <div class="slide-body container p-5">
                 <div class="row">
                     <div class="col">
                         <div class="home_content pt-5">
-                            <div class="home_date text-black" style="color: black; font-size: 20px">15-18 April, 2020</div>
-                            <div class="home_title text-black" style="color: black; font-size: 24px">17th WONCA World Rural Health Conference 2020</div>
-                            <div class="home_location text-black" style="color: black; font-size: 20px">Dhaka, Bangladesh</div>
-
+                            <div>{!! $slide['slider_details'] !!} </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="slide-item home_content_container" style="background: url({{ asset('frontend/img/slider2.jpg') }}); background-size: cover">
-            <div class="slide-body container p-5">
-                <div class="row">
-                    <div class="col">
-                        <div class="home_content pt-5">
-                            <div class="home_date text-black" style="color: black; font-size: 20px">15-18 April, 2020</div>
-                            <div class="home_title text-black" style="color: black; font-size: 24px">17th WONCA World Rural Health Conference 2020</div>
-                            <div class="home_location text-black" style="color: black; font-size: 20px">Dhaka, Bangladesh</div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @endforeach
     </div>
 </section>
 <!-- image slider End -->
@@ -416,6 +405,7 @@
                     <p>Important Dates</p>
 
                     <div class="row pt-3">
+                        @foreach($dates as $date)
                         <div class="col-md-6">
                             <div class="dates">
                                 <ul>
@@ -424,84 +414,15 @@
                                             <img class="dates-cal" src="{{ asset('frontend/img/event.png') }}">
                                         </div>
                                         <div class="col-10 text-left">
-                                            <h4>Abstract Submissions Open (Workshops/Symposia)</h4>
-                                            <p>Date Coming Soon, 2020</p>
+                                            <h4>{{ $date['title'] }}</h4>
+                                            <p>{{ $date['details'] }}</p>
                                         </div>
                                     </li>
                                 </ul>
                             </div> <br>
                         </div>
-                        <div class="col-md-6">
-                            <div class="dates">
-                                <ul>
-                                    <li class="row">
-                                        <div class="col-1 date-img">
-                                            <img class="dates-cal" src="{{ asset('frontend/img/event.png') }}">
-                                        </div>
-                                        <div class="col-10 text-left">
-                                            <h4>Abstract Submissions Open (Workshops/Symposia)</h4>
-                                            <p>Date Coming Soon, 2020</p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div><br>
-                        </div>        <div class="col-md-6">
-                            <div class="dates">
-                                <ul>
-                                    <li class="row">
-                                        <div class="col-1 date-img">
-                                            <img class="dates-cal" src="{{ asset('frontend/img/event.png') }}">
-                                        </div>
-                                        <div class="col-10 text-left">
-                                            <h4>Abstract Submissions Open (Workshops/Symposia)</h4>
-                                            <p>Date Coming Soon, 2020</p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div><br>
-                        </div>        <div class="col-md-6">
-                            <div class="dates">
-                                <ul>
-                                    <li class="row">
-                                        <div class="col-1 date-img">
-                                            <img class="dates-cal" src="{{ asset('frontend/img/event.png') }}">
-                                        </div>
-                                        <div class="col-10 text-left">
-                                            <h4>Abstract Submissions Open (Workshops/Symposia)</h4>
-                                            <p>Date Coming Soon, 2020</p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div><br>
-                        </div>        <div class="col-md-6">
-                            <div class="dates">
-                                <ul>
-                                    <li class="row">
-                                        <div class="col-1 date-img">
-                                            <img class="dates-cal" src="{{ asset('frontend/img/event.png') }}">
-                                        </div>
-                                        <div class="col-10 text-left">
-                                            <h4>Abstract Submissions Open (Workshops/Symposia)</h4>
-                                            <p>Date Coming Soon, 2020</p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div><br>
-                        </div>        <div class="col-md-6">
-                            <div class="dates">
-                                <ul>
-                                    <li class="row">
-                                        <div class="col-1 date-img">
-                                            <img class="dates-cal" src="{{ asset('frontend/img/event.png') }}">
-                                        </div>
-                                        <div class="col-10 text-left">
-                                            <h4>Abstract Submissions Open (Workshops/Symposia)</h4>
-                                            <p>Date Coming Soon, 2020</p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+
+                        @endforeach
 
 
 
@@ -543,114 +464,69 @@
                             <a class="nav-link" id="day3-tab" data-toggle="tab" href="#day3" role="tab" aria-controls="day3" aria-selected="false">day 03 <span>April 17,2020</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="day3-tab" data-toggle="tab" href="#day3" role="tab" aria-controls="day3" aria-selected="false">day 04 <span>April 18,2020</span></a>
+                            <a class="nav-link" id="day4-tab" data-toggle="tab" href="#day4" role="tab" aria-controls="day4" aria-selected="false">day 04 <span>April 18,2020</span></a>
                         </li>
                     </ul>
                     <div class="tab-content" id="offerTabContent">
                         <div class="tab-pane fade show active" id="day1" role="tabpanel" aria-labelledby="day1-tab">
+                            @foreach($day1 as $day)
                             <div class="single-schedule-item">
                                 <div class="schedule-time">
-                                    <h3>09:00 <span>am</span></h3>
+                                    <h3>{{ $day['time'] }}</h3>
                                 </div>
                                 <div class="schedule-details">
-                                    <a href="#">
-                                        <h3>Coming Soon.</h3>
+                                    <a>
+                                        <h3>{{ $day['title'] }}</h3>
                                     </a>
-                                    <p>Coming Soon</p>
+                                    <p>{{ $day['text'] }}</p>
                                 </div>
                             </div>
-                            <div class="single-schedule-item">
-                                <div class="schedule-time">
-                                    <h3>10:00 <span>am</span></h3>
-                                </div>
-                                <div class="schedule-details">
-                                    <a href="#">
-                                        <h3>Coming Soon</h3>
-                                    </a>
-                                    <p>Coming Soon</p>
-                                </div>
-                            </div>
-                            <div class="single-schedule-item">
-                                <div class="schedule-time">
-                                    <h3>11:00 <span>am</span></h3>
-                                </div>
-                                <div class="schedule-details">
-                                    <a href="#">
-                                        <h3>Coming Soon</h3>
-                                    </a>
-                                    <p>Coming Soon</p>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                         <div class="tab-pane fade" id="day2" role="tabpanel" aria-labelledby="day2-tab">
-                            <div class="single-schedule-item">
-                                <div class="schedule-time">
-                                    <h3>09:00 <span>am</span></h3>
+                            @foreach($day2 as $day)
+                                <div class="single-schedule-item">
+                                    <div class="schedule-time">
+                                        <h3>{{ $day['time'] }}</h3>
+                                    </div>
+                                    <div class="schedule-details">
+                                        <a>
+                                            <h3>{{ $day['title'] }}</h3>
+                                        </a>
+                                        <p>{{ $day['text'] }}</p>
+                                    </div>
                                 </div>
-                                <div class="schedule-details">
-                                    <a href="#">
-                                        <h3>Coming Soon.</h3>
-                                    </a>
-                                    <p>Coming Soon</p>
-                                </div>
-                            </div>
-                            <div class="single-schedule-item">
-                                <div class="schedule-time">
-                                    <h3>10:00 <span>am</span></h3>
-                                </div>
-                                <div class="schedule-details">
-                                    <a href="#">
-                                        <h3>Coming Soon</h3>
-                                    </a>
-                                    <p>Coming Soon</p>
-                                </div>
-                            </div>
-                            <div class="single-schedule-item">
-                                <div class="schedule-time">
-                                    <h3>11:00 <span>am</span></h3>
-                                </div>
-                                <div class="schedule-details">
-                                    <a href="#">
-                                        <h3>Coming Soon</h3>
-                                    </a>
-                                    <p>Coming Soon</p>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                         <div class="tab-pane fade" id="day3" role="tabpanel" aria-labelledby="day3-tab">
-                            <div class="single-schedule-item">
-                                <div class="schedule-time">
-                                    <h3>09:00 <span>am</span></h3>
+                            @foreach($day3 as $day)
+                                <div class="single-schedule-item">
+                                    <div class="schedule-time">
+                                        <h3>{{ $day['time'] }}</h3>
+                                    </div>
+                                    <div class="schedule-details">
+                                        <a>
+                                            <h3>{{ $day['title'] }}</h3>
+                                        </a>
+                                        <p>{{ $day['text'] }}</p>
+                                    </div>
                                 </div>
-                                <div class="schedule-details">
-                                    <a href="#">
-                                        <h3>Coming Soon</h3>
-                                    </a>
-                                    <p>Coming Soon</p>
+                            @endforeach
+                        </div>
+                        <div class="tab-pane fade" id="day4" role="tabpanel" aria-labelledby="day4-tab">
+                            @foreach($day4 as $day)
+                                <div class="single-schedule-item">
+                                    <div class="schedule-time">
+                                        <h3>{{ $day['time'] }}</h3>
+                                    </div>
+                                    <div class="schedule-details">
+                                        <a>
+                                            <h3>{{ $day['title'] }}</h3>
+                                        </a>
+                                        <p>{{ $day['text'] }}</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="single-schedule-item">
-                                <div class="schedule-time">
-                                    <h3>10:00 <span>am</span></h3>
-                                </div>
-                                <div class="schedule-details">
-                                    <a href="#">
-                                        <h3>Coming Soon</h3>
-                                    </a>
-                                    <p>Coming Soon</p>
-                                </div>
-                            </div>
-                            <div class="single-schedule-item">
-                                <div class="schedule-time">
-                                    <h3>11:00 <span>am</span></h3>
-                                </div>
-                                <div class="schedule-details">
-                                    <a href="#">
-                                        <h3>Coming Soon</h3>
-                                    </a>
-                                    <p>Coming Soon</p>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -673,99 +549,21 @@
             </div>
         </div>
         <div class="row">
+            @foreach($speakers as $speaker)
             <div class="col-lg-3 col-sm-6">
                 <div class="single-speakers">
                     <div class="speakers-image">
-                        <img src="{{ asset('frontend/img/avator.jpg') }}" alt="speakers" />
+                        <img class="front-speaker" src="{{ asset('uploads/'.$speaker['speaker_image']) }}" alt="speakers" />
                     </div>
                     <div class="speakers-info">
-                        <a href="#">
-                            <h3>Coming Soon</h3>
+                        <a>
+                            <h3>{{ $speaker['speaker_name'] }}</h3>
                         </a>
-                        <p>Coming Soon</p>
+                        <p>{{ $speaker['speaker_details'] }}</p>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-sm-6">
-                <div class="single-speakers">
-                    <div class="speakers-image">
-                        <img src="{{ asset('frontend/img/avator.jpg') }}" alt="speakers" />
-                    </div>
-                    <div class="speakers-info">
-                        <a href="#">
-                            <h3>Coming Soon</h3>
-                        </a>
-                        <p>Coming Soon</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div class="single-speakers">
-                    <div class="speakers-image">
-                        <img src="{{ asset('frontend/img/avator.jpg') }}" alt="speakers" />
-                    </div>
-                    <div class="speakers-info">
-                        <a href="#">
-                            <h3>Coming Soon</h3>
-                        </a>
-                        <p>Coming Soon</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div class="single-speakers">
-                    <div class="speakers-image">
-                        <img src="{{ asset('frontend/img/avator.jpg') }}" alt="speakers" />
-                    </div>
-                    <div class="speakers-info">
-                        <a href="#">
-                            <h3>Coming Soon</h3>
-                        </a>
-                        <p>Coming Soon</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-3 col-sm-6">
-                <div class="single-speakers">
-                    <div class="speakers-image">
-                        <img src="{{ asset('frontend/img/avator.jpg') }}" alt="speakers" />
-                    </div>
-                    <div class="speakers-info">
-                        <a href="#">
-                            <h3>Coming Soon</h3>
-                        </a>
-                        <p>Coming Soon</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div class="single-speakers">
-                    <div class="speakers-image">
-                        <img src="{{ asset('frontend/img/avator.jpg') }}" alt="speakers" />
-                    </div>
-                    <div class="speakers-info">
-                        <a href="#">
-                            <h3>Coming Soon</h3>
-                        </a>
-                        <p>Coming Soon</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div class="single-speakers">
-                    <div class="speakers-image">
-                        <img src="{{ asset('frontend/img/avator.jpg') }}" alt="speakers" />
-                    </div>
-                    <div class="speakers-info">
-                        <a href="#">
-                            <h3>Coming Soon</h3>
-                        </a>
-                        <p>Coming Soon</p>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
@@ -804,9 +602,15 @@
                 <iframe  width="100%"
                         src="https://www.youtube.com/embed/4AnzWqD-_hI?controls=0">
                 </iframe>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure laboriosam libero mollitia pariatur quas quisquam
-                    velit. Accusantium at distinctio dolores incidunt libero
-                    odio perspiciatis, qui, similique soluta tempore, ut voluptatum?</p>
+                <p>Dhaka experiences a hot, wet and humid tropical climate. Under the Köppen climate classification,
+                    Dhaka has a tropical wet and dry climate. The city has a distinct monsoonal season, with an annual average
+                    temperature of 25 °C (77 °F) and monthly means varying between 18 °C (64 °F) in January and 29 °C (84 °F)
+                    in August. Nearly 80% of the annual average rainfall of 1,854 millimetres (73.0 in) occurs during the
+                    monsoon season which lasts from May until the end of September.Increasing air and water pollution emanating
+                    from traffic congestion and industrial waste are serious problems affecting public health and the quality of
+                    life in the city. Water bodies and wetlands around Dhaka are facing destruction as these are being filled
+                    up to construct multi-storied buildings and other real estate developments. Coupled with pollution,
+                    such erosion of natural habitats threatens to destroy much of the regional biodiversity</p>
             </div>
             <div class="col-lg-3 about-container mr-3">
                 <h2>Tourism</h2>

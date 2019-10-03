@@ -1,5 +1,5 @@
 <ul class="sidebar navbar-nav">
-    <li class="nav-item active">
+    <li class="nav-item ">
         <a class="nav-link" href="#">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span>
@@ -58,7 +58,7 @@
         <div class="dropdown-menu" aria-labelledby="pagesDropdown" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(5px, 56px, 0px);">
 
             <a class="dropdown-item" href="{{route('backend.dates')}}">All Important Dates</a>
-            <a class="dropdown-item" href="{{route('backend.date.create')}}">Add New Important Date</a>
+            <a class="dropdown-item" href="{{route('backend.date.create')}}">Add New  Date</a>
         </div>
     </li>
     <li class="nav-item dropdown">

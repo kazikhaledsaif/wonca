@@ -325,7 +325,7 @@ nav.navbar .nav-item .nav-link {
 	font-size: 15px;
 }
 
-nav.navbar .nav-item .nav-link.active {
+nav.navbar .nav-item .nav-link:hover {
 	color: #e1137b !important
 }
 
@@ -1626,6 +1626,10 @@ img.dates-cal{
     list-style-type: disc;
     margin-left: 3px;
     line-height: 2;
+}
+img.front-speaker{
+    max-height: 255px!important;
+    max-width: 255px!important;
 }
 /*
 

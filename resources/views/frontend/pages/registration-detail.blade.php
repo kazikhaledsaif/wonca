@@ -26,7 +26,7 @@
                     At consequatur consequuntur cum cupiditate, deleniti deserunt dicta eaque eveniet ex excepturi expedita illum
                     in laborum neque quas quidem rerum saepe voluptatibus!</p>
                 <p>
-                    
+
                 </p>
             </div>
         </section>
@@ -54,7 +54,7 @@
                                     <li><i class="fa fa-check"></i> Medical students / Other health Professionals (Nurse/Technologist/ Health Assistant  <b class="price-tag">BDT 3000</b> </li>
                                 </ul>
                                 <div class="price-action">
-                                    <a href="#" class="evlis-btn">Register Now!</a>
+                                    <a href="{{ route('register') }}" class="evlis-btn">Register Now!</a>
                                 </div>
                             </div>
                         </div>
@@ -77,7 +77,7 @@
                                         (Nurse/Technologist/ Health Assistant  <b class="price-tag">BDT 4000</b> </li>
                                 </ul>
                                 <div class="price-action">
-                                    <a href="#" class="evlis-btn">Register Now!</a>
+                                    <a href="{{ route('register') }}" class="evlis-btn">Register Now!</a>
                                 </div>
                             </div>
                         </div>
@@ -99,7 +99,7 @@
                                         (Nurse/Technologist/ Health Assistant  <b class="price-tag">BDT 5000</b> </li>
                                 </ul>
                                 <div class="price-action">
-                                    <a href="#" class="evlis-btn">Register Now!</a>
+                                    <a href="{{ route('register') }}#" class="evlis-btn">Register Now!</a>
                                 </div>
                             </div>
                         </div>
