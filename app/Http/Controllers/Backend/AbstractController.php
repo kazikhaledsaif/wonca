@@ -73,7 +73,7 @@ class AbstractController extends Controller
 
         Mail::to(Auth::user()->email)->send(new AbstractMail($data));
 
-        return redirect()->back();
+        return back()->with('success','Abstract Submitted Successfully, Thank You.');
     }
 
     /**

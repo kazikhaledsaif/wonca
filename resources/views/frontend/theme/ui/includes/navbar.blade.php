@@ -29,7 +29,7 @@
                     <a href="#" class="nav-link" data-scroll-nav="4">speakers</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link" data-scroll-nav="7">contact</a>
+                    <a href="{{ route('login') }}" class="nav-link" data-scroll-nav="7">Login</a>
                 </li>
             </ul>
             <ul class="navbar-nav get_tickets">

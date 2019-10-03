@@ -15,7 +15,7 @@
             </div>
         </div>
     </section>
-
+    @include('frontend.theme.ui.includes.flash-message')
     <div class="container mt-lg-5  abstract">
         <h1 class="ml-1 text-black">Workshop & Scientific Paper Submission Form</h1> <br>
 

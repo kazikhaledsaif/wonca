@@ -11,23 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.pages.home');
-})->name('home');
-
-Route::get('/abstract', function () {
-    return view('frontend.pages.abstract');
-})->name('abstract');
-Route::get('/workshop', function () {
-    return view('frontend.pages.workshop');
-})->name('workshop');
-
-
-
-
-
-
-
 
 Auth::routes();
 
@@ -48,6 +31,7 @@ Route::name('backend.')
         Route::get('/workshop', 'WorkshopController@index')->name('workshop');
         Route::get('/workshop/{id}', 'WorkshopController@show')->name('workshop.show');
         Route::get('/subscriber', 'SubscriberController@index')->name('subscriber');
+        Route::get('/subscriber/export', 'SubscriberController@export')->name('subscriber.export');
 
     Route::get('/add-important-date', 'ImportantDateController@create')->name('date.create');
     Route::post('/add-important-date', 'ImportantDateController@store')->name('date.store');
@@ -71,12 +55,12 @@ Route::name('backend.')
     Route::get('/slider-edit/{id}', 'SliderController@show')->name('slider.edit');
 
 
-    Route::get('/add-schedule', 'ScheduleController@create')->name('schedule.create');
-    Route::post('/add-schedule', 'ScheduleController@store')->name('schedule.store');
-    Route::get('/schedules', 'ScheduleController@index')->name('schedules');
-    Route::post('/schedule-update', 'ScheduleController@update')->name('schedule.update');
-    Route::get('/schedule-destroy/{id}', 'ScheduleController@destroy')->name('schedule.destroy');
-    Route::get('/schedule-edit/{id}', 'ScheduleController@show')->name('schedule.edit');
+        Route::get('/add-schedule', 'ScheduleController@create')->name('schedule.create');
+        Route::post('/add-schedule', 'ScheduleController@store')->name('schedule.store');
+        Route::get('/schedules', 'ScheduleController@index')->name('schedules');
+        Route::post('/schedule-update', 'ScheduleController@update')->name('schedule.update');
+        Route::get('/schedule-destroy/{id}', 'ScheduleController@destroy')->name('schedule.destroy');
+        Route::get('/schedule-edit/{id}', 'ScheduleController@show')->name('schedule.edit');
 
 
 

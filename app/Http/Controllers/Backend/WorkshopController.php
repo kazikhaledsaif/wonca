@@ -56,9 +56,9 @@ class WorkshopController extends Controller
 
         $data = $abstract;
 
-        Mail::to(Auth::user()->email)->send(new WorkshopMail($data));
+       Mail::to(Auth::user()->email)->send(new WorkshopMail($data));
 
-        return redirect()->back();
+        return back()->with('success','Workshop Submitted Successfully, Thank You.');
     }
 
     /**

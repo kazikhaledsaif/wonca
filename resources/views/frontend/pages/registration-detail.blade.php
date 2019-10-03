@@ -86,6 +86,7 @@
                         <div class="single-price-box active">
                             <div class="price-head">
                                 <h4>Late</h4>
+                                <h6>&nbsp;</h6>
                             </div>
                             <div class="price-body">
                                 <ul>

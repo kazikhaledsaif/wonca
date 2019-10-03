@@ -27,7 +27,7 @@
         }
 
         /* Full-width input fields */
-        input[type=text], input[type=password] {
+        input[type=text], select, input[type=password] {
             width: 100%;
             padding: 15px;
             margin: 5px 0 22px 0;
