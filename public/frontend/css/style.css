@@ -1631,6 +1631,9 @@ img.front-speaker{
     max-height: 255px!important;
     max-width: 255px!important;
 }
+.dashboard{
+    color: black;
+}
 /*
 
 focus-color: #420e62;

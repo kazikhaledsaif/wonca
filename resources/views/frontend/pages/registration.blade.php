@@ -43,7 +43,7 @@
             <input  class="contact_input" type="text" id="state" placeholder="NY" name="state"  required>
 
             <label for="country"><font size="4"><b> Country: </b></font></label>
-            <select id="country" name="country" class="contact_input">
+            <select id="country" name="country" class="contact_input form-control">
                 <option value="Afghanistan">Afghanistan</option>
                 <option value="Åland Islands">Åland Islands</option>
                 <option value="Albania">Albania</option>
@@ -62,7 +62,7 @@
                 <option value="Azerbaijan">Azerbaijan</option>
                 <option value="Bahamas">Bahamas</option>
                 <option value="Bahrain">Bahrain</option>
-                <option value="Bangladesh">Bangladesh</option>
+                <option value="Bangladesh" selected>Bangladesh</option>
                 <option value="Barbados">Barbados</option>
                 <option value="Belarus">Belarus</option>
                 <option value="Belgium">Belgium</option>

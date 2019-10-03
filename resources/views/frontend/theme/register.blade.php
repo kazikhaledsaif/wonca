@@ -9,6 +9,7 @@
     <!--Font Awesome css-->
     <link rel="stylesheet" href="{{ asset('frontend/css/font-awesome.min.css') }}">
     <style>
+
         body {
             font-family: Arial, Helvetica, sans-serif;
             background-color: white;
@@ -27,7 +28,9 @@
         }
 
         /* Full-width input fields */
-        input[type=text], input[type=password] {
+        input[type=text],
+        select,
+        input[type=password] {
             width: 100%;
             padding: 15px;
             margin: 5px 0 22px 0;
@@ -73,6 +76,7 @@
             background-color: #f1f1f1;
             text-align: center;
         }
+
     </style>
 </head>
 <body>

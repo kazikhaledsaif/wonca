@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return view('frontend.pages.home');
-})->name('home');
+})->name('index');
 
 Route::get('/abstract', function () {
     return view('frontend.pages.abstract');
@@ -86,27 +86,31 @@ Route::name('backend.')
     });
 
 Route::namespace('Backend')
-  /*    ->middleware('role:user')*/
+    /*    ->middleware('role:user') */
     ->group(function (){
 
         Route::get('/abstract','AbstractController@frontend' )->name('abstract.frontend');
         Route::post('/abstract','AbstractController@store' )->name('abstract.store');
 
-      Route::get('/workshop','WorkshopController@frontend' )->name('workshop.frontend');
-      Route::post('/workshop','WorkshopController@store' )->name('workshop.store');
+        Route::get('/workshop','WorkshopController@frontend' )->name('workshop.frontend');
+        Route::post('/workshop','WorkshopController@store' )->name('workshop.store');
     });
 
 
 Route::name('frontend.')
         ->namespace('Frontend')
         ->group(function (){
+            Route::get('/','IndexController@index' )->name('index');
 
             Route::get('/registration', function () {
                 return view('frontend.pages.registration-detail');
             })->name('registration');
 
-           Route::get('/','IndexController@index' )->name('index');
-           Route::post('/subscriber','IndexController@subscriber' )->name('subscriber.store');
+            Route::get('/dashboard','SinglePageController@dashboard' )->name('dashboard');
+
+            Route::get('/important-dates','SinglePageController@dates' )->name('dates');
+
+            Route::post('/subscriber','IndexController@subscriber' )->name('subscriber.store');
         });
 
 
