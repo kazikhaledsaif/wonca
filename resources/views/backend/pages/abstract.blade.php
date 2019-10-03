@@ -38,8 +38,6 @@
                     </tfoot>
                     <tbody>
 
-
-
                     @foreach($users as $user)
                         <tr>
                             <td>{{ $user->user->email }} </td>
@@ -48,12 +46,6 @@
                             <td><a href="{{ route('backend.abstract-submitted.show',['id'=> $user->id]) }}" class="btn btn-primary">View</a></td>
                         </tr>
                     @endforeach
-
-
-
-
-
-
 
                     </tbody>
                 </table>

@@ -28,13 +28,32 @@
                 <li class="nav-item">
                     <a href="#" class="nav-link" data-scroll-nav="4">speakers</a>
                 </li>
+                @guest
                 <li class="nav-item">
-                    <a href="{{ route('login') }}" class="nav-link" data-scroll-nav="7">Login</a>
+                    <a href="{{ route('login') }}" class="nav-link" >Login</a>
                 </li>
+                @else
+                <li class="nav-item">
+                        <a href="#" class="nav-link" >Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('logout') }}"
+                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();"
+                       class="nav-link" >{{ __('Logout') }} </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+
+                </li>
+                @endguest
             </ul>
+            @guest
             <ul class="navbar-nav get_tickets">
                 <li><a href="{{ route('frontend.registration') }}">Registration </a></li>
             </ul>
+            @endguest
         </div>
     </div>
 </nav>

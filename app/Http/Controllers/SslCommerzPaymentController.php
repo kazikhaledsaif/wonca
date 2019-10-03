@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use DB;
 use Illuminate\Http\Request;
 use App\Library\SslCommerz\SslCommerzNotification;
+use Illuminate\Support\Facades\Auth;
 
 class SslCommerzPaymentController extends Controller
 {
@@ -25,25 +26,28 @@ class SslCommerzPaymentController extends Controller
         # Let's say, your oder transaction informations are saving in a table called "orders"
         # In "orders" table, order unique identity is "transaction_id". "status" field contain status of the transaction, "amount" is the order amount to be paid and "currency" is for storing Site Currency which will be checked with paid currency.
 
+
+
+
         $post_data = array();
         $post_data['total_amount'] = '10'; # You cant not pay less than 10
         $post_data['currency'] = "BDT";
         $post_data['tran_id'] = uniqid(); // tran_id must be unique
 
         # CUSTOMER INFORMATION
-        $post_data['cus_name'] = 'Customer Name';
-        $post_data['cus_email'] = 'customer@mail.com';
-        $post_data['cus_add1'] = 'Customer Address';
+        $post_data['cus_name'] = Auth::user()->f_name. " ".Auth::user()->l_name;
+        $post_data['cus_email'] = Auth::user()->email;
+        $post_data['cus_add1'] =  Auth::user()->address;
         $post_data['cus_add2'] = "";
-        $post_data['cus_city'] = "";
-        $post_data['cus_state'] = "";
+        $post_data['cus_city'] = Auth::user()->city;
+        $post_data['cus_state'] = Auth::user()->state;
         $post_data['cus_postcode'] = "";
-        $post_data['cus_country'] = "Bangladesh";
-        $post_data['cus_phone'] = '8801XXXXXXXXX';
+        $post_data['cus_country'] = Auth::user()->country;
+        $post_data['cus_phone'] = Auth::user()->mobile;
         $post_data['cus_fax'] = "";
 
         # SHIPMENT INFORMATION
-        $post_data['ship_name'] = "Store Test";
+        $post_data['ship_name'] = "Online service";
         $post_data['ship_add1'] = "Dhaka";
         $post_data['ship_add2'] = "Dhaka";
         $post_data['ship_city'] = "Dhaka";
@@ -53,7 +57,7 @@ class SslCommerzPaymentController extends Controller
         $post_data['ship_country'] = "Bangladesh";
 
         $post_data['shipping_method'] = "NO";
-        $post_data['product_name'] = "Computer";
+        $post_data['product_name'] = "Registration_bill";
         $post_data['product_category'] = "Goods";
         $post_data['product_profile'] = "physical-goods";
 
