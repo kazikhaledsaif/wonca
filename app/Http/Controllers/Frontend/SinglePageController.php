@@ -23,16 +23,20 @@ class SinglePageController extends Controller
 
         else{
 
-            $cbn = Carbon::now()->toDateString();
+            $cat = Auth::user()->reg_category;
+            $cbn = Carbon::now()->toDateString();   /* current date*/
             $user = Auth::user();
             $abs = AbstractSubmission::where('uid','=', $user->id)->count();
             $work = Workshop::where('uid','=', $user->id)->count();
-            $amount =
 
-     DB::select("SELECT * FROM `categories` WHERE `started_at` >= $cbn AND  `finished_at` >= $cbn AND `code` = 'wdm'");
+            $amount = Category::select('code','currency','amount','started_at','finished_at')
+                ->where('code',$cat)
+                ->whereDate('started_at','<=', $cbn)
+                ->whereDate('finished_at','>=', $cbn)
+                ->firstOrFail()
+                ;
 
-
-        dd($amount);
+//        dd($amount);
             return view('frontend.pages.dashboard')->with([
                 'user' => $user,
                 'abs' => $abs,

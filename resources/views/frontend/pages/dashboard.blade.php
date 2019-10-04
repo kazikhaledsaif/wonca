@@ -20,9 +20,14 @@
         <div class="row">
             <div class="col-md-9">
                 <p>
-                    Dear <b>{{$user->f_name." ".$user->l_name}}</b> , <br>
+                    Dear <b>{{$user->f_name." ".$user->l_name}}</b> , <br> <br>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam blanditiis commodi cupiditate distinctio dolorem expedita
                     facilis hic illo laborum, minus natus omnis perspiciatis quis, quo quod. Accusantium doloribus nostrum soluta!
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam blanditiis commodi cupiditate distinctio dolorem expedita
+                    facilis hic illo laborum, minus natus omnis perspiciatis quis, quo quod. Accusantium doloribus nostrum soluta!
+                    <br> <br>
+                    Thanks,<br>
+                    WRHC2020
                 </p>
             </div>
             <div class="col-md-3 text-center pt-5 pt-lg-0 pt-md-0">
@@ -38,7 +43,7 @@
                     <div class="col bg-primary p-3">
                         <h6>Workshop paper Submitted</h6>
                         <h4>{{$work}}</h4>
-                        <h4>{!! $amount->code !!}</h4>
+                        <h4></h4>
                     </div>
                 </div>
             </div>
@@ -46,22 +51,19 @@
 
         <div class="row">
             <div class="col text-center pb-3 pt-3">
-
-
-
                 <h2>Payment</h2>
             </div>
         </div>
 
         <div class="col">
-            <p>Your Registration amount is <b>$500</b>
+            <h5>Your Registration bill is {{ strtoupper($amount['currency']) }} <b> {{ $amount['amount'] }}</b></h5>  <br>
             <form action="{{ url('/pay') }}" method="POST" class="needs-validation">
                 <input type="hidden" value="{{ csrf_token() }}" name="_token" />
 
-            <button  type="submit" class="btn bg-success">Proceed To Online Transaction </button>
+            <button  type="submit" class="btn bg-success">Proceed To Pay Through Online Transaction </button>
             </form>
             <br><br>
-            <span>* You can also pay via local bank transaction manually</span>
+            <p>* You can also pay via local bank transaction manually</p>
         </div>
     </div>
 
