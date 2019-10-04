@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\PaymentMail;
 use DB;
 use Illuminate\Http\Request;
 use App\Library\SslCommerz\SslCommerzNotification;
@@ -177,6 +178,9 @@ class SslCommerzPaymentController extends Controller
         $order_detials = DB::table('orders')
             ->where('transaction_id', $tran_id)
             ->select('transaction_id', 'status', 'currency', 'amount')->first();
+
+
+        Mail::to(Auth::user()->email)->send(new PaymentMail());
 
         if ($order_detials->status == 'Pending') {
             $validation = $sslc->orderValidate($tran_id, $amount, $currency, $request->all());
