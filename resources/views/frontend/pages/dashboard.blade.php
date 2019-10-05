@@ -43,7 +43,7 @@
                     <div class="col bg-primary p-3">
                         <h6>Workshop paper Submitted</h6>
                         <h4>{{$work}}</h4>
-                        <h4></h4>
+
                     </div>
                 </div>
             </div>
@@ -59,6 +59,8 @@
             <h5>Your Registration bill is {{ strtoupper($amount['currency']) }} <b> {{ $amount['amount'] }}</b></h5>  <br>
             <form action="{{ url('/pay') }}" method="POST" class="needs-validation">
                 <input type="hidden" value="{{ csrf_token() }}" name="_token" />
+                <input type="hidden" value="{{strtoupper($amount['currency'])}}" name="curr" />
+                <input type="hidden" value="{{$amount['amount']}}" name="amount" />
 
             <button  type="submit" class="btn bg-success">Proceed To Pay Through Online Transaction </button>
             </form>

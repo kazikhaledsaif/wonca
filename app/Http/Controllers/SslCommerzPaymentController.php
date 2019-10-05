@@ -31,13 +31,14 @@ class SslCommerzPaymentController extends Controller
 
 
         $post_data = array();
-        $post_data['total_amount'] = '10'; # You cant not pay less than 10
-        $post_data['currency'] = "BDT";
+        $post_data['total_amount'] = $request->amount; # You cant not pay less than 10
+        $post_data['currency'] = $request->curr;
         $post_data['tran_id'] = uniqid(); // tran_id must be unique
 
         # CUSTOMER INFORMATION
         $post_data['cus_name'] = Auth::user()->f_name. " ".Auth::user()->l_name;
         $post_data['cus_email'] = Auth::user()->email;
+        $post_data['cus_id'] = Auth::user()->id;
         $post_data['cus_add1'] =  Auth::user()->address;
         $post_data['cus_add2'] = "";
         $post_data['cus_city'] = Auth::user()->city;
@@ -72,6 +73,7 @@ class SslCommerzPaymentController extends Controller
         $update_product = DB::table('orders')
             ->where('transaction_id', $post_data['tran_id'])
             ->updateOrInsert([
+                'customer_id' => $post_data['cus_id'],
                 'name' => $post_data['cus_name'],
                 'email' => $post_data['cus_email'],
                 'phone' => $post_data['cus_phone'],
