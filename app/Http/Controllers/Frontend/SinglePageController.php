@@ -64,4 +64,22 @@ class SinglePageController extends Controller
             'dates' => $dates
         ]);
     }
+
+
+    public function invitation(){
+        return view('frontend.pages.invitation');
+    }
+    public function tourism(){
+        return view('frontend.pages.tourism');
+    }
+    public function transportation(){
+        return view('frontend.pages.transportation');
+    }
+
+    public function attendees(){
+        return view('frontend.pages.attendees');
+    }
+    public function accommodations(){
+        return view('frontend.pages.accommodations');
+    }
 }

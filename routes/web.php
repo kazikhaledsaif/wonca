@@ -108,6 +108,14 @@ Route::name('frontend.')
             })->name('registration');
 
             Route::get('/dashboard','SinglePageController@dashboard' )->name('dashboard');
+
+            Route::get('invitation', 'SinglePageController@invitation')->name('invitation');
+            Route::get('tourism', 'SinglePageController@tourism')->name('tourism');
+            Route::get('transportation', 'SinglePageController@transportation')->name('transportation');
+            Route::get('attendees', 'SinglePageController@attendees')->name('attendees');
+            Route::get('accommodations', 'SinglePageController@accommodations')->name('accommodations');
+
+
             Route::get('/payment-success','SinglePageController@payment_success' )->name('payment.success');
             Route::get('/payment-failed','SinglePageController@payment_fail' )->name('payment.failed');
 
