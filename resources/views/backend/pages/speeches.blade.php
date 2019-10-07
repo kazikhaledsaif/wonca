@@ -7,13 +7,23 @@
     <!-- Breadcrumbs-->
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="#">Dashboard</a>
+            <a href="{{ route('backend.dashboard') }}">Dashboard</a>
         </li>
         <li class="breadcrumb-item active">Speeches</li>
     </ol>
 
     <!-- DataTables Example -->
     <div class="card mb-3">
+        <div class="container">
+            <ul>
+                <li>Choose <b>Front Speaker </b> for slider speaker message </li>
+                <li>Choose <b>Keynote Speaker </b> for Keynote speaker message </li>
+                <li>Choose <b>Normal Speaker </b> for general speaker with their image </li>
+                <li>You don't have to insert message for general speaker </li>
+            </ul>
+        </div>
+
+
         <div class="card-header">
             <i class="fas fa-table"></i>
             Speeches <span class="badge badge-info"></span> </div>
@@ -24,7 +34,7 @@
                     <tr>
                         <th>Speaker Type</th>
                         <th>Speaker Name</th>
-                        <th>Speaker Details</th>
+                        <th>Speaker Title</th>
                         <th>Speech</th>
                         <th>Image</th>
                         <th>Action</th>
@@ -32,11 +42,11 @@
                     </thead>
                     <tfoot>
                     <tr>
-                        <th>Speaker Type</th>    <th>Speaker Name</th>
-                        <th>Speaker Details</th>
+                        <th>Speaker Type</th>
+                        <th>Speaker Name</th>
+                        <th>Speaker Title</th>
                         <th>Speech</th>
                         <th>Image</th>
-
                         <th>Action</th>
                     </tr>
                     </tfoot>

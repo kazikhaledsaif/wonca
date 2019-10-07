@@ -22,6 +22,7 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                     <tr>
+                        <th>#</th>
                         <th>Slider Text</th>
                         <th>Image</th>
                         <th>Action</th>
@@ -29,9 +30,9 @@
                     </thead>
                     <tfoot>
                     <tr>
+                        <th>#</th>
                         <th>Slider Text</th>
                         <th>Image</th>
-
                         <th>Action</th>
                     </tr>
                     </tfoot>
@@ -41,7 +42,8 @@
 
                     @foreach($users as $user)
                         <tr>
-                            <td>{{ $user->slider_details }} </td>
+                            <td>{!! $user->id !!}  </td>
+                            <td>{!! $user->slider_details !!}  </td>
                             <td>
                                 <img src="{{ asset("uploads/".$user->slider_image)  }}" alt="" width="100px" height="100px">
 

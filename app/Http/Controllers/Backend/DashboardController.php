@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\AbstractSubmission;
 use App\Http\Controllers\Controller;
+use App\Subscriber;
+use App\User;
+use App\Workshop;
+use DB;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 
@@ -18,7 +23,31 @@ class DashboardController extends Controller
 
  /*       Role::create(['name'=>'admin']);
         Role::create(['name'=>'user']);*/
-        return view('backend.pages.dashboard');
+
+        $subs = Subscriber::count();
+        $user = User::count();
+        $abstract = AbstractSubmission::count();
+        $workshop = Workshop::count();
+        $order = DB::table('orders')->count();
+        $bdt = DB::table('orders')
+            ->where('currency','BDT')
+            ->sum('amount');
+        $usd = DB::table('orders')
+            ->where('currency','USD')
+            ->sum('amount');
+
+//        dd($subs);
+
+        return view('backend.pages.dashboard')->with([
+            'subs' => $subs,
+            'user' => $user,
+            'abstract' => $abstract,
+            'workshop' => $workshop,
+            'order' => $order,
+            'bdt' => $bdt,
+            'usd' => $usd,
+
+        ]);
     }
 
     /**
