@@ -34,7 +34,7 @@
                         <p>Dear everyone, <br>
 
                             It’s a great pleasure to announce the 17th WONCA World Rural Health Conference (WRHC 2020) to be held in Dhaka from 15th - 18th April 2020. This is an international event that will see delegates from around the world inspiring and exchanging ideas on the latest developments and challenges in rural family practice and rural and remote health generally. </p>
-                        <a href="#" class="evlis-btn">Read more</a>
+                        <a href="{{ route('frontend.invitation') }}" class="evlis-btn">Read more</a>
 
                     </div>
                     <div class="col-md-4">
@@ -99,9 +99,8 @@
                 <div>
                     <h4>Important Links</h4>
                     <ul>
-                        <li><a href="#">Registration fee</a></li>
-                        <li><a href="#">Deadlines</a></li>
-                        <li><a href="#">Venue</a></li>
+                        <li><a href="{{ route('frontend.registration') }}">Registration fee</a></li>
+                        <li><a href="{{ route('frontend.dates') }}">Deadlines</a></li>
                         <li><a href="#">Venue</a></li>
                     </ul>
                 </div>
@@ -600,7 +599,7 @@
                 <h2>Dhaka</h2>
                 <h4>Your Host City</h4>
                 <iframe  width="100%"
-                        src="https://www.youtube.com/embed/4AnzWqD-_hI?controls=0">
+                        src="https://www.youtube.com/embed/ssBM8JaPMiw?controls=0">
                 </iframe>
                 <p>Dhaka experiences a hot, wet and humid tropical climate. Under the Köppen climate classification,
                     Dhaka has a tropical wet and dry climate. The city has a distinct monsoonal season, with an annual average
@@ -614,40 +613,51 @@
             </div>
             <div class="col-lg-3 about-container mr-3">
                 <h2>Tourism</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure laboriosam libero mollitia pariatur quas quisquam
-                    velit. Accusantium at distinctio dolores incidunt libero
-                    odio perspiciatis, qui, similique soluta tempore, ut voluptatum?</p>
+                <p>A land of unspoiled nature, rich cultural heritage and exotic beauty, Bangladesh is considered as one of the most potential
+                    country for eco-tourism among the South Asian countries. The unique composition of biological phenomenon with varied flora
+                    and fauna of this area has perhaps no match elsewhere in the world. We can proudly mention that Bangladesh is blessed with the
+                    three world’s splendid and enchanting eco-tourism spots of diverse nature – The Sundarbans, largest mangrove forest </p>
+                <a href="{{ route('frontend.tourism') }}" class="evlis-btn">Read more</a>
+
+
             </div>
             <div class="col-lg-3 about-container mr-3">
                 <h2>Visa Information</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure laboriosam libero mollitia pariatur quas quisquam
-                    velit. Accusantium at distinctio dolores incidunt libero
-                    odio perspiciatis, qui, similique soluta tempore, ut voluptatum?</p>
+                <p>
+                    As a sovereign state, Bangladesh requires all foreigners to obtain permission to enter its territory.
+                    Visas are issued by Bangladesh missions located throughout the world or, if applicable, on arrival in Bangladesh.
+                    All foreigners require a valid Bangladeshi visa to enter Bangladesh. Most diplomats can get a Visa On Arrival in
+                    Bangladesh if travelling with a diplomatic passport. Tourists, investors and business travellers can get a single entry
+                    Visa On Arrival in Bangladesh, if travelling with an eligible passport; carrying US $500 in cash/credit;
+                    having a return/onward air ticket or train ticket; and if entering Bangladesh by air, sea or road but not on a train.
+                    <br>
+                    <a href="https://visa.gov.bd/">Visa.gov.bd</a>
+                </p>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-5 about-container mr-3">
                 <h2>International Attendess</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure laboriosam libero mollitia pariatur quas quisquam
-                    velit. Accusantium at distinctio dolores incidunt libero
-                    odio perspiciatis, qui, similique soluta tempore, ut voluptatum?</p>
+                <p>A visit to Dhaka provides an opportunity that’s not to be missed – a chance to learn something of the history and culture of Bangladesh.
+                    Visitors may find their schedule during a congress leave little opportunity for wider exploration of what Bangladesh has to offer.</p>
+                <a href="{{ route('frontend.attendees') }}" class="evlis-btn">Read more</a>
+
             </div>
             <div class="col-lg-3 about-container mr-3">
                 <h2>Accommodation</h2>
                 <p>
-                    <li><a href="#">Inter Continental</a></li>
-                    <li><a href="#">Pan Pacific</a></li>
-                    <li><a href="#">Radison</a></li>
-                    <li><a href="#">Lovinci</a></li>
-                    <li><a href="#">La Merredean</a></li>
-                    <li><a href="#">Regency</a></li>
+                    Dhaka has a very wide range of places to stay, accommodating all budget types, From luxurious five-star hotels and business hotels
+                    to simple but economical one-star accommodation.
                 </p>
+                <a href="{{ route('frontend.accommodations') }}" class="evlis-btn">Read more</a>
+
             </div>
             <div class="col-lg-3 about-container mr-3">
                 <h2>Transportation</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure laboriosam libero mollitia pariatur quas quisquam
-                    velit. Accusantium at distinctio dolores incidunt libero
-                    odio perspiciatis, qui, similique soluta tempore, ut voluptatum?</p>
+                <p>The transport sector of Bangladesh consists of a variety of modes. The country being a flat plain, all three modes of surface transport,
+                    i.e. road, railway and water are widely used in carrying both passengers and cargo.</p>
+                <a href="{{ route('frontend.transportation') }}" class="evlis-btn">Read more</a>
+
             </div>
         </div>
     </div>
@@ -656,58 +666,58 @@
 
 
 <!-- Blog Area Start -->
-<section class="evlis-blog-area section_70">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="site-heading">
-                    <h4>Event News</h4>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="single-blog row">
-                    <div class="col-3 blog-image">
-                        <p class="date-bg-1">17 <span>Jan</span></p>
-                    </div>
-                    <div class="col-9 blog-text">
-                        <a href="#">
-                            <h3>marketing event you can't afford to miss.</h3>
-                        </a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor eligendi, facere libero neque quis sequi ullam vel voluptatum. Beatae consectetur repellat sed suscipit tempore ut! Assumenda maiores minus nemo obcaecati.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="single-blog row">
-                    <div class="col-3 blog-image">
-                        <p class="date-bg-1">17 <span>Jan</span></p>
-                    </div>
-                    <div class="col-9 blog-text">
-                        <a href="#">
-                            <h3>marketing event you can't afford to miss.</h3>
-                        </a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor eligendi, facere libero neque quis sequi ullam vel voluptatum. Beatae consectetur repellat sed suscipit tempore ut! Assumenda maiores minus nemo obcaecati.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="single-blog row">
-                    <div class="col-3 blog-image">
-                        <p class="date-bg-1">17 <span>Jan</span></p>
-                    </div>
-                    <div class="col-9 blog-text">
-                        <a href="#">
-                            <h3>marketing event you can't afford to miss.</h3>
-                        </a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor eligendi, facere libero neque quis sequi ullam vel voluptatum. Beatae consectetur repellat sed suscipit tempore ut! Assumenda maiores minus nemo obcaecati.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+{{--<section class="evlis-blog-area section_70">--}}
+{{--    <div class="container">--}}
+{{--        <div class="row">--}}
+{{--            <div class="col-md-12">--}}
+{{--                <div class="site-heading">--}}
+{{--                    <h4>Event News</h4>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--        <div class="row">--}}
+{{--            <div class="col-lg-4">--}}
+{{--                <div class="single-blog row">--}}
+{{--                    <div class="col-3 blog-image">--}}
+{{--                        <p class="date-bg-1">17 <span>Jan</span></p>--}}
+{{--                    </div>--}}
+{{--                    <div class="col-9 blog-text">--}}
+{{--                        <a href="#">--}}
+{{--                            <h3>marketing event you can't afford to miss.</h3>--}}
+{{--                        </a>--}}
+{{--                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor eligendi, facere libero neque quis sequi ullam vel voluptatum. Beatae consectetur repellat sed suscipit tempore ut! Assumenda maiores minus nemo obcaecati.</p>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-lg-4">--}}
+{{--                <div class="single-blog row">--}}
+{{--                    <div class="col-3 blog-image">--}}
+{{--                        <p class="date-bg-1">17 <span>Jan</span></p>--}}
+{{--                    </div>--}}
+{{--                    <div class="col-9 blog-text">--}}
+{{--                        <a href="#">--}}
+{{--                            <h3>marketing event you can't afford to miss.</h3>--}}
+{{--                        </a>--}}
+{{--                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor eligendi, facere libero neque quis sequi ullam vel voluptatum. Beatae consectetur repellat sed suscipit tempore ut! Assumenda maiores minus nemo obcaecati.</p>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="col-lg-4">--}}
+{{--                <div class="single-blog row">--}}
+{{--                    <div class="col-3 blog-image">--}}
+{{--                        <p class="date-bg-1">17 <span>Jan</span></p>--}}
+{{--                    </div>--}}
+{{--                    <div class="col-9 blog-text">--}}
+{{--                        <a href="#">--}}
+{{--                            <h3>marketing event you can't afford to miss.</h3>--}}
+{{--                        </a>--}}
+{{--                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor eligendi, facere libero neque quis sequi ullam vel voluptatum. Beatae consectetur repellat sed suscipit tempore ut! Assumenda maiores minus nemo obcaecati.</p>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</section>--}}
 <!-- Blog Area End -->
 
 <!-- Sponsor Area Start -->
@@ -718,7 +728,7 @@
                 <div class="site-heading">
                     <h4>Event Sponsors</h4>
                     <h2>Partners & Sponsors</h2>
-                    <p>Consectetur adipisicing elit sed do eiusmod, tempor incididunt labore dolore magna aliqua enim minim veniam quista nostrud exion.</p>
+{{--                    <p>Consectetur adipisicing elit sed do eiusmod, tempor incididunt labore dolore magna aliqua enim minim veniam quista nostrud exion.</p>--}}
                 </div>
             </div>
         </div>
@@ -726,7 +736,7 @@
             <div class="col-md-12">
                 <div class="sponsor-box-item">
                     <div class="sponsor-heading">
-                        <h4>Financial Sponsors</h4>
+{{--                        <h4>Financial Sponsors</h4>--}}
                     </div>
                     <div class="sponsor-box">
                         <ul>
@@ -739,41 +749,8 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <div class="sponsor-box-item">
-                    <div class="sponsor-heading">
-                        <h4>Media Partner</h4>
-                    </div>
-                    <div class="sponsor-box">
-                        <ul>
-                            <li><a href="#"><img src="assets/img/sponsor9.png" alt="sponsor" /></a></li>
-                            <li><a href="#"><img src="assets/img/sponsor3.png" alt="sponsor" /></a></li>
-                            <li><a href="#"><img src="assets/img/sponsor8.png" alt="sponsor" /></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="sponsor-box-item">
-                    <div class="sponsor-heading">
-                        <h4>location Sponsors</h4>
-                    </div>
-                    <div class="sponsor-box">
-                        <ul>
-                            <li><a href="#"><img src="assets/img/sponsor4.png" alt="sponsor" /></a></li>
-                            <li><a href="#"><img src="assets/img/sponsor5.png" alt="sponsor" /></a></li>
-                            <li><a href="#"><img src="assets/img/sponsor7.png" alt="sponsor" /></a></li>
-                            <li><a href="#"><img src="assets/img/sponsor6.png" alt="sponsor" /></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
                 <div class="section-action">
-                    <a href="#" class="evlis-btn">Become a sponsor</a>
+                    <a href="#" class="evlis-btn">See all sponsor</a>
                 </div>
             </div>
         </div>
