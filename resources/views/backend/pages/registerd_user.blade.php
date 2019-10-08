@@ -34,6 +34,7 @@
                         <th>Transaction ID</th>
                         <th>Payment Status</th>
                         <th>Action</th>
+                        <th>Pay Action</th>
                     </tr>
                     </thead>
                     <tfoot>
@@ -46,6 +47,7 @@
                         <th>Transaction ID</th>
                         <th>Payment Status</th>
                         <th>Action</th>
+                        <th>Pay Action</th>
                     </tr>
                     </tfoot>
                     <tbody>
@@ -58,6 +60,7 @@
                         <td>{{ $user->country }}</td>
                         <td class="text-center">{{ $user->transaction_id }}</td>
                         <td class="text-center">{{ $user->payment_status }}</td>
+                        <td><a href="{{ route('backend.registered-user.show',['id'=> $user->id]) }}" class="btn btn-info">Details</a></td>
                         <td><a href="{{ route('backend.registered-user.show',['id'=> $user->id]) }}" class="btn btn-info">Details</a></td>
                     </tr>
                     @endforeach
