@@ -1,6 +1,6 @@
 @extends('frontend.theme.master')
 
-@section('title','User Dashboard')
+@section('title','User Dashboard | ')
 
 @section('content')
 
@@ -62,11 +62,13 @@
                 <input type="hidden" value="{{strtoupper($amount['currency'])}}" name="curr" />
                 <input type="hidden" value="{{$amount['amount']}}" name="amount" />
 
-            <button  type="submit" class="btn bg-success">Proceed To Pay Through Online Transaction </button>
+            <button  type="submit" class="btn bg-success"><img style="width:auto;height:auto;" src="https://securepay.sslcommerz.com/public/image/SSLCommerz-Pay-With-logo-All-Size-03.png" /> </button>
             </form>
             <br><br>
             <p>* You can also pay via local bank transaction manually</p>
+
         </div>
+
     </div>
 
 

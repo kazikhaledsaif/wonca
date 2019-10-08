@@ -29,9 +29,10 @@
                         <th>Name</th>
                         <th>Title</th>
                         <th>Institute</th>
-                        <th>Reference</th>
                         <th>Mobile</th>
                         <th>Country</th>
+                        <th>Transaction ID</th>
+                        <th>Payment Status</th>
                         <th>Action</th>
                     </tr>
                     </thead>
@@ -40,9 +41,10 @@
                         <th>Name</th>
                         <th>Title</th>
                         <th>Institute</th>
-                        <th>Reference</th>
                         <th>Mobile</th>
                         <th>Country</th>
+                        <th>Transaction ID</th>
+                        <th>Payment Status</th>
                         <th>Action</th>
                     </tr>
                     </tfoot>
@@ -52,9 +54,10 @@
                         <td>{{ $user->f_name.' '.$user->l_name }} </td>
                         <td>{{ $user->title }}</td>
                         <td>{{ $user->organization }}</td>
-                        <td>{{ $user->name }}</td>
                         <td>{{ $user->mobile }}</td>
                         <td>{{ $user->country }}</td>
+                        <td class="text-center">{{ $user->transaction_id }}</td>
+                        <td class="text-center">{{ $user->payment_status }}</td>
                         <td><a href="{{ route('backend.registered-user.show',['id'=> $user->id]) }}" class="btn btn-info">Details</a></td>
                     </tr>
                     @endforeach

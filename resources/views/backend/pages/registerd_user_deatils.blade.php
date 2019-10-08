@@ -70,8 +70,11 @@
                     <td>{{ $user->reg_category }}</td>
                 </tr>
                 <tr>
-                    <td class="bg-info">Reference Key</td>
-                    <td>{{ $user->reg_category }}</td>
+                    <td class="bg-info">Transaction ID</td>
+                    <td>{{ $user->transaction_id }}</td>
+                </tr>   <tr>
+                    <td class="bg-info">Payment Status</td>
+                    <td>{{ $user->payment_status }}</td>
                 </tr>
             </table>
         </div>

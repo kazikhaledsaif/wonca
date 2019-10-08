@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Mail;
 use App\Mail\PaymentMail;
 use DB;
 use Illuminate\Http\Request;
@@ -26,9 +28,6 @@ class SslCommerzPaymentController extends Controller
         # Here you have to receive all the order data to initate the payment.
         # Let's say, your oder transaction informations are saving in a table called "orders"
         # In "orders" table, order unique identity is "transaction_id". "status" field contain status of the transaction, "amount" is the order amount to be paid and "currency" is for storing Site Currency which will be checked with paid currency.
-
-
-
 
         $post_data = array();
         $post_data['total_amount'] = $request->amount; # You cant not pay less than 10
@@ -81,8 +80,14 @@ class SslCommerzPaymentController extends Controller
                 'status' => 'Pending',
                 'address' => $post_data['cus_add1'],
                 'transaction_id' => $post_data['tran_id'],
-                'currency' => $post_data['currency']
+                'currency' => $post_data['currency'],
+                'payment_time' => Carbon::now()->tz('Asia/Dhaka')->toDateTimeString()
             ]);
+
+        $update = DB::table('users')
+            ->where('id', $post_data['cus_id'])
+            ->update(['transaction_id' => $post_data['tran_id']]);
+
 
         $sslc = new SslCommerzNotification();
         # initiate(Transaction Data , false: Redirect to SSLCOMMERZ gateway/ true: Show all the Payement gateway here )
@@ -152,7 +157,8 @@ class SslCommerzPaymentController extends Controller
                 'status' => 'Pending',
                 'address' => $post_data['cus_add1'],
                 'transaction_id' => $post_data['tran_id'],
-                'currency' => $post_data['currency']
+                'currency' => $post_data['currency'],
+
             ]);
 
         $sslc = new SslCommerzNotification();
@@ -168,7 +174,6 @@ class SslCommerzPaymentController extends Controller
 
     public function success(Request $request)
     {
-        echo "Transaction is Successful";
 
         $tran_id = $request->input('tran_id');
         $amount = $request->input('amount');
@@ -180,7 +185,6 @@ class SslCommerzPaymentController extends Controller
         $order_detials = DB::table('orders')
             ->where('transaction_id', $tran_id)
             ->select('transaction_id', 'status', 'currency', 'amount')->first();
-
 
 
 
@@ -197,7 +201,14 @@ class SslCommerzPaymentController extends Controller
                     ->where('transaction_id', $tran_id)
                     ->update(['status' => 'Processing']);
 
-                echo "<br >Transaction is successfully Completed";
+                $update = DB::table('users')
+                    ->where('transaction_id', $tran_id)
+                    ->update(['payment_status' => 'Paid']);
+
+                Mail::to(Auth::user()->email)->send(new PaymentMail());
+                return view('frontend.pages.payment-success');
+
+//                echo "<br >Transaction is successfully Completed";
             } else {
                 /*
                 That means IPN did not work or IPN URL was not set in your merchant panel and Transation validation failed.
@@ -210,12 +221,16 @@ class SslCommerzPaymentController extends Controller
             }
         } else if ($order_detials->status == 'Processing' || $order_detials->status == 'Complete') {
             /*
-             That means through IPN Order status already updated. Now you can just show the customer that transaction is completed. No need to udate database.
+             That means through IPN Order status already updated. Now you can just show the customer that transaction is completed. No need to update database.
              */
-            echo "Transaction is successfully Completed";
+//            echo "Transaction is successfully Completed";
+            return view('frontend.pages.payment-success');
+
         } else {
             #That means something wrong happened. You can redirect customer to your product page.
-            echo "Invalid Transaction";
+//            echo "Invalid Transaction";
+            return view('frontend.pages.payment-fail');
+
         }
 
 
@@ -289,6 +304,11 @@ class SslCommerzPaymentController extends Controller
                     $update_product = DB::table('orders')
                         ->where('transaction_id', $tran_id)
                         ->update(['status' => 'Processing']);
+
+
+                    Mail::to(Auth::user()->email)->send(new PaymentMail());
+
+
                     echo "Transaction is successfully Completed";
                 } else {
                     /*

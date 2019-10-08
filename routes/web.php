@@ -37,7 +37,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::name('backend.')
     ->namespace('Backend')
     ->prefix('admin')
-   ->middleware('role:admin')
+//   ->middleware('role:admin')
     ->group(function (){
 
         Route::get('/', 'DashboardController@index')->name('dashboard');
@@ -120,6 +120,7 @@ Route::name('frontend.')
             Route::get('/payment-failed','SinglePageController@payment_fail' )->name('payment.failed');
 
             Route::get('/important-dates','SinglePageController@dates' )->name('dates');
+            Route::get('/contact','SinglePageController@contact' )->name('contact');
 
             Route::post('/subscriber','IndexController@subscriber' )->name('subscriber.store');
         });

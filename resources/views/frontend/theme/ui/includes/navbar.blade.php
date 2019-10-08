@@ -34,7 +34,7 @@
                 </li>
                 @else
                 <li class="nav-item">
-                        <a href="#" class="nav-link" >Dashboard</a>
+                        <a href="{{ route('frontend.dashboard') }}" class="nav-link" >Dashboard</a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('logout') }}"

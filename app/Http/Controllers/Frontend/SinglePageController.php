@@ -66,6 +66,11 @@ class SinglePageController extends Controller
     }
 
 
+    public function contact(){
+        return view('frontend.pages.contact');
+    }
+
+
     public function invitation(){
         return view('frontend.pages.invitation');
     }
