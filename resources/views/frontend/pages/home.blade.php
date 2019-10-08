@@ -61,7 +61,7 @@
 <section class="evlis-promo-area section_60 pt-3 pb-2" >
     <div class="container mr-2 ml-2">
         <div class="row">
-            <div class="col-md-9 col-sm-12">
+            <div class="col-md-10 col-sm-12">
                 <div class="row">
                     <div class="owl-carousel text-center slider-speech">
                         @foreach($slider_speech as $slider)
@@ -84,7 +84,7 @@
                                             <a href="#">
                                                 <h3>{{ $slider['speaker_name'] }}</h3>
                                             </a>
-                                            <p>{{ $slider['speaker_type'] }}</p>
+                                            <p>{{ $slider['speaker_details'] }}</p>
                                         </div>
 
                                     </div>
@@ -95,13 +95,13 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-12 important-link">
+            <div class="col-md-2 col-sm-12 important-link">
                 <div>
                     <h4>Important Links</h4>
                     <ul>
                         <li><a href="{{ route('frontend.registration') }}">Registration fee</a></li>
                         <li><a href="{{ route('frontend.dates') }}">Deadlines</a></li>
-                        <li><a href="#">Venue</a></li>
+                        <li><a href="{{ route('frontend.contact') }}">Venue</a></li>
                     </ul>
                 </div>
             </div>
@@ -122,7 +122,7 @@
                     <div class="col-md-4">
                         <div class="single-speakers">
                             <div class="speakers-image ml-5 mr-5">
-                                <img src="{{ asset("uploads/".$keynote_speaker['speaker_image']) }}" alt="speakers 1">
+                                <img src="{{ URL::asset("uploads/".$keynote_speaker['speaker_image']) }}" alt="speakers 1">
                             </div>
                             <div class="speakers-info">
                                 <a href="">
@@ -155,7 +155,7 @@
 
 
     @foreach($sliders as $slide)
-        <div class="slide-item home_content_container" style="background: url({{ asset("uploads/".$slide['slider_image']) }}); background-size: cover">
+        <div class="slide-item home_content_container" style="background: url({{ URL::asset("uploads/".$slide['slider_image']) }}); background-size: cover">
             <div class="slide-body container p-5">
                 <div class="row">
                     <div class="col">
@@ -231,7 +231,7 @@
                                     <a href="#">
                                         <h3>Submit Abstract</h3>
                                     </a>
-                                    <p>Submit your research abstract in 17th WONCA World Rural Health Conferance 2020.</p>
+                                    <p>Submit your research abstract in 17th WONCA World Rural Health Conference 2020.</p>
                                     <a href="#" class="evlis-btn">Abstract Submission</a>
                                 </div>
                             </div>
@@ -244,10 +244,10 @@
                                 </div>
                                 <div class="attend-text">
                                     <a href="#">
-                                        <h3>Conferance Venue</h3>
+                                        <h3>Conference Venue</h3>
                                     </a>
                                     <p>
-                                        Find the venue of 17th WONCA World Rural Health Conferance 2020
+                                        Find the venue of 17th WONCA World Rural Health Conference 2020
                                         .</p>
                                 </div>
                             </div>
@@ -302,7 +302,7 @@
                     <p>
                         ✓ Over the course of four days, attendees will have a wide range of sessions to choose from World renowned experts will be invited for state of the art plenary and special session lectures. In addition, numerous workshops. oral and poster presentations highlighting the latest and most cutting-edge research will be prominently featured in this exciting scientific agenda.  <br>
 
-                        ✓ With over more then 500 participants expected to convene in Dhaka, 17th WONCA World Rural Health Conferance 2020 offers a unique platform and the opportunity for you to network with a truly international audience  <br>
+                        ✓ With over more then 500 participants expected to convene in Dhaka, 17th WONCA World Rural Health Conference 2020 offers a unique platform and the opportunity for you to network with a truly international audience  <br>
 
                         ✓ Do not miss this opportunity to learn from and meet an exceptional group of international faculty. <br>
 

@@ -21,17 +21,19 @@
             <div class="col-md-9">
                 <p>
                     Dear <b>{{$user->f_name." ".$user->l_name}}</b> , <br> <br>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam blanditiis commodi cupiditate distinctio dolorem expedita
-                    facilis hic illo laborum, minus natus omnis perspiciatis quis, quo quod. Accusantium doloribus nostrum soluta!
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam blanditiis commodi cupiditate distinctio dolorem expedita
-                    facilis hic illo laborum, minus natus omnis perspiciatis quis, quo quod. Accusantium doloribus nostrum soluta!
+                    You are now listed as proud delegates of 17th WRHC2020 Dhaka,Bangladesh.
+                    <br><br>
+                    Now you can submit your Research paper's abstract from <b>Abstract Submission</b> tab on top. You
+                    can also submit your Workshop & Scientific Paper abstract from <b>Workshop & Scientific Paper</b> tab.
+
                     <br> <br>
                     Thanks,<br>
-                    WRHC2020
+                    World Rural Health Conference 2020 <br>
+                    Dhaka, Bangladesh
                 </p>
             </div>
             <div class="col-md-3 text-center pt-5 pt-lg-0 pt-md-0">
-                <h6>Your Stats</h6>
+                <h6>Your Submission</h6>
 
                 <div class=" pt-2 pb-2">
                     <div class="col bg-info p-3">
@@ -55,19 +57,19 @@
             </div>
         </div>
 
-        <div class="col">
-            <h5>Your Registration bill is {{ strtoupper($amount['currency']) }} <b> {{ $amount['amount'] }}</b></h5>  <br>
-            <form action="{{ url('/pay') }}" method="POST" class="needs-validation">
-                <input type="hidden" value="{{ csrf_token() }}" name="_token" />
-                <input type="hidden" value="{{strtoupper($amount['currency'])}}" name="curr" />
-                <input type="hidden" value="{{$amount['amount']}}" name="amount" />
+{{--        <div class="col">--}}
+{{--            <h5>Your Registration bill is {{ strtoupper($amount['currency']) }} <b> {{ $amount['amount'] }}</b></h5>  <br>--}}
+{{--            <form action="{{ url('/pay') }}" method="POST" class="needs-validation">--}}
+{{--                <input type="hidden" value="{{ csrf_token() }}" name="_token" />--}}
+{{--                <input type="hidden" value="{{strtoupper($amount['currency'])}}" name="curr" />--}}
+{{--                <input type="hidden" value="{{$amount['amount']}}" name="amount" />--}}
 
-            <button  type="submit" class="btn bg-success"><img style="width:auto;height:auto;" src="https://securepay.sslcommerz.com/public/image/SSLCommerz-Pay-With-logo-All-Size-03.png" /> </button>
-            </form>
-            <br><br>
-            <p>* You can also pay via local bank transaction manually</p>
+{{--            <button  type="submit" class="btn bg-success"><img style="width:auto;height:auto;" src="https://securepay.sslcommerz.com/public/image/SSLCommerz-Pay-With-logo-All-Size-03.png" /> </button>--}}
+{{--            </form>--}}
+{{--            <br><br>--}}
+{{--            <p>* You can also pay via local bank transaction manually</p>--}}
 
-        </div>
+{{--        </div>--}}
 
     </div>
 
