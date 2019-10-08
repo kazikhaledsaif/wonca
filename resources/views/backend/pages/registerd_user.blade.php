@@ -61,7 +61,7 @@
                         <td class="text-center">{{ $user->transaction_id }}</td>
                         <td class="text-center">{{ $user->payment_status }}</td>
                         <td><a href="{{ route('backend.registered-user.show',['id'=> $user->id]) }}" class="btn btn-info">Details</a></td>
-                        <td><a href="{{ route('backend.registered-user.show',['id'=> $user->id]) }}" class="btn btn-info">Details</a></td>
+                        <td><a href="{{ route('backend.registered-user.pay',['id'=> $user->id]) }}" class="btn btn-info">Check Paid</a></td>
                     </tr>
                     @endforeach
 

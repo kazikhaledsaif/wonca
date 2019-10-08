@@ -23,6 +23,14 @@ class RegisteredUserController extends Controller
             'users'=>$registeredUser
         ]);
     }
+    public function pay($id)
+    {
+        $user = User::where('id',$id)->firstOrFail();
+        $user->payment_status = "Paid";
+        $user->save();
+       redirect()->back();
+    }
+
 
     /**
      * Show the form for creating a new resource.

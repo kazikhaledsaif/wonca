@@ -43,6 +43,7 @@ Route::name('backend.')
         Route::get('/', 'DashboardController@index')->name('dashboard');
         Route::get('/registered-user', 'RegisteredUserController@index')->name('registered-user');
         Route::get('/registered-user/{id}', 'RegisteredUserController@show')->name('registered-user.show');
+        Route::get('/payment-update/{id}', 'RegisteredUserController@pay')->name('registered-user.pay');
         Route::get('/abstract-submitted', 'AbstractController@index')->name('abstract-submitted');
         Route::get('/abstract-submitted/{id}', 'AbstractController@show')->name('abstract-submitted.show');
         Route::get('/workshop', 'WorkshopController@index')->name('workshop');
