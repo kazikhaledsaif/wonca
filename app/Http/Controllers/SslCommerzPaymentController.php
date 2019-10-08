@@ -182,7 +182,7 @@ class SslCommerzPaymentController extends Controller
             ->select('transaction_id', 'status', 'currency', 'amount')->first();
 
 
-        Mail::to(Auth::user()->email)->send(new PaymentMail());
+
 
         if ($order_detials->status == 'Pending') {
             $validation = $sslc->orderValidate($tran_id, $amount, $currency, $request->all());
@@ -289,7 +289,6 @@ class SslCommerzPaymentController extends Controller
                     $update_product = DB::table('orders')
                         ->where('transaction_id', $tran_id)
                         ->update(['status' => 'Processing']);
-
                     echo "Transaction is successfully Completed";
                 } else {
                     /*
