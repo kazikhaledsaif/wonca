@@ -89,7 +89,6 @@
                 <a class="card-footer text-white clearfix small z-1">
                     <span class="float-left">Registration Paid by</span>
                     <span class="float-right">
-                  <i class="fas fa-angle-right"></i>
                 </span>
                 </a>
             </div>
@@ -100,12 +99,11 @@
                     <div class="card-body-icon">
                         <i class="fas fa-fw fa-money-bill"></i>
                     </div>
-                    <div class="mr-5"><h3>{{ $bdt }}</h3></div>
+                    <div class="mr-5"><h3>{{ $bdt }} ৳</h3></div>
                 </div>
                 <a class="card-footer text-white clearfix small z-1">
                     <span class="float-left">Amount Received (BDT) </span>
                     <span class="float-right">
-                  <i class="fas fa-angle-right"></i>
                 </span>
                 </a>
             </div>
@@ -121,7 +119,6 @@
                 <a class="card-footer text-white clearfix small z-1">
                     <span class="float-left">Amount Received (USD) </span>
                     <span class="float-right">
-                  <i class="fas fa-angle-right"></i>
                 </span>
                 </a>
             </div>
